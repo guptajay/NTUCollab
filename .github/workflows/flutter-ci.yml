@@ -1,5 +1,5 @@
-on: push
-name: Build and Release apk
+on: pull_request
+name: Build Apk
 jobs:
   build:
     name: Build APK
