@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "158839762312",
+    "project_id": "ntu-collab",
+    "storage_bucket": "ntu-collab.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:158839762312:android:77568669b3bd428a549e3d",
+        "android_client_info": {
+          "package_name": "com.ase.ntucollab"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "158839762312-u0p1d1bqqdc8rl4rbi9vvues7v6esskq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdsH0wvp1441hGh1-MhsPWsqPHQVislVo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "158839762312-u0p1d1bqqdc8rl4rbi9vvues7v6esskq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
