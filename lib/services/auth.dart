@@ -1,6 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:ntucollab/services/DatabaseService.dart';
+import '../models/UserProfile.dart';
+
+UserProfile userProfile = new UserProfile();
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
 final GoogleSignIn googleSignIn = GoogleSignIn();
@@ -31,14 +35,22 @@ Future<String> signInWithGoogle() async {
     assert(user.displayName != null);
     assert(user.photoURL != null);
 
+    userProfile.setUserID(user.uid);
+    userProfile.setUserMail(user.email);
+    userProfile.setUserName(user.displayName);
+    // userProfile.setUserDisplay(user.photoUrl);
+
     name = user.displayName;
     email = user.email;
     imageUrl = user.photoURL;
 
     // Only taking the first part of the name, i.e., First Name
-    if (name.contains(" ")) {
-      name = name.substring(0, name.indexOf(" "));
+    if (userProfile.getUserName().contains(" ")) {
+      name = userProfile
+          .getUserName().substring(0, name.indexOf(" "));
+      userProfile.setUserName(name);
     }
+    await DatabaseService(email: userProfile.getUserMail()).updateUserData(['Computers', 'Art'],'new member');
 
     assert(!user.isAnonymous);
     assert(await user.getIdToken() != null);
