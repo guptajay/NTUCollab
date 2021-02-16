@@ -3,6 +3,9 @@ import 'package:ntucollab/screens/login_page.dart';
 
 void main() => runApp(MyApp());
 
+PageController pageController = PageController(initialPage: 0);
+int currentIndex = 0;
+
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

@@ -18,7 +18,7 @@ class AppbarWidget {
 //        ),
         actions: <Widget>[
           IconButton(
-            icon: Image.asset('assets/logo.png'),
+            icon: Image.asset('assets/images/logo.png'),
             onPressed: () {
               // do something
             },
