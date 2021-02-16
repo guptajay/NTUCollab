@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ntucollab/screens/home.dart';
+import 'package:ntucollab/screens/module_tags.dart';
 import 'package:ntucollab/services/auth.dart';
 
 class LoginPage extends StatefulWidget {
@@ -60,6 +61,18 @@ class _LoginPageState extends State<LoginPage> {
                   height: 60 * _scale,
                 ),
                 _signInButton(),
+                SizedBox(
+                  height: 5,
+                ),
+                ElevatedButton(
+                  child: Text('Select Interest Tags'),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ModuleTagsPage()),
+                    );
+                  },
+                ),
                 SizedBox(
                   height: 100 * _scale,
                 ),

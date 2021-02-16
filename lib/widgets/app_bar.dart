@@ -11,10 +11,19 @@ class AppbarWidget {
             style: TextStyle(
                 color: border,
                 fontSize: 35)),
-        leading: IconButton(
-          icon: Image.asset('assets/logo.png'),
-          onPressed: () {},
-        ),
+
+//        leading: IconButton(
+//          icon: Image.asset('assets/logo.png'),
+//          onPressed: () {},
+//        ),
+        actions: <Widget>[
+          IconButton(
+            icon: Image.asset('assets/logo.png'),
+            onPressed: () {
+              // do something
+            },
+          )
+        ],
         backgroundColor: bgColor,
         brightness: Brightness.light,
         elevation: 0,
