@@ -52,7 +52,9 @@ class Modules extends StatelessWidget {
                           Navigator.push(
                             context,
                             PageRouteBuilder(
-                              pageBuilder: (context, a, b) => Home()
+                              pageBuilder: (context, a, b) {
+                                return SizedBox(height: 0,);
+                              }
                             ),
                           );
                         },
