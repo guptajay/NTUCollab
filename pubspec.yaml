@@ -53,6 +53,9 @@ flutter:
   assets:
     - assets/logo.png
     - assets/logo_google.png
+    - assets/clubs.jpeg
+    - assets/interest.png
+    - assets/modules.jpeg
 
   fonts:
     - family: Open Sans

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:multi_select_flutter/multi_select_flutter.dart';
-import 'package:ntucollab/screens/interest_group_tags.dart';
+import 'package:ntucollab/screens/club_tags.dart';
 import 'package:ntucollab/widgets/app_bar.dart';
 
 class Tags {
@@ -13,13 +13,12 @@ class Tags {
   });
 }
 
-class ClubTags extends StatefulWidget {
+class ModuleTagsPage extends StatefulWidget {
   @override
-  _ClubTagsState createState() => _ClubTagsState();
+  _ModuleTagsPageState createState() => _ModuleTagsPageState();
 }
 
-class _ClubTagsState extends State<ClubTags> {
-
+class _ModuleTagsPageState extends State<ModuleTagsPage> {
   static List<Tags> _modules = [
     Tags(id: 1, name: "Mathematics"),
     Tags(id: 2, name: "Physics"),
@@ -30,10 +29,9 @@ class _ClubTagsState extends State<ClubTags> {
     Tags(id: 7, name: "Data Science"),
   ];
   final _items = _modules
-      .map((clubs) => MultiSelectItem<Tags>(clubs, clubs.name))
+      .map((module) => MultiSelectItem<Tags>(module, module.name))
       .toList();
   List<Tags> _selectedmodules2 = [];
-
   @override
   void initState() {
     super.initState();
@@ -51,12 +49,12 @@ class _ClubTagsState extends State<ClubTags> {
             child: Column(
               children: <Widget>[
                 Text(
-                  "Clubs",
+                  "Modules",
                   style: TextStyle(fontSize: 40),
                 ),
                 SizedBox(height: 20),
                 Image(
-                  image: AssetImage("assets/images/clubs.jpeg"),
+                  image: AssetImage("assets/images/modules.jpeg"),
                   height: 200.0,
                 ),
                 SizedBox(height: 40),
@@ -74,8 +72,8 @@ class _ClubTagsState extends State<ClubTags> {
                         initialChildSize: 0.4,
                         listType: MultiSelectListType.CHIP,
                         searchable: true,
-                        buttonText: Text("Club Tags"),
-                        title: Text("Clubs"),
+                        buttonText: Text("Module Tags"),
+                        title: Text("Modules"),
                         items: _items,
                         onConfirm: (values) {
                           _selectedmodules2 = values;
@@ -93,12 +91,12 @@ class _ClubTagsState extends State<ClubTags> {
                       ),
                       _selectedmodules2 == null || _selectedmodules2.isEmpty
                           ? Container(
-                          padding: EdgeInsets.all(10),
-                          alignment: Alignment.centerLeft,
-                          child: Text(
-                            "None selected",
-                            style: TextStyle(color: Colors.black54),
-                          ))
+                              padding: EdgeInsets.all(10),
+                              alignment: Alignment.centerLeft,
+                              child: Text(
+                                "None selected",
+                                style: TextStyle(color: Colors.black54),
+                              ))
                           : Container(),
                     ],
                   ),
@@ -110,7 +108,7 @@ class _ClubTagsState extends State<ClubTags> {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => InterestGroupTags()),
+                          MaterialPageRoute(builder: (context) => ClubTags()),
                         );
                       },
                       child: Row(

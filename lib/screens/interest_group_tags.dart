@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:multi_select_flutter/multi_select_flutter.dart';
+import 'package:ntucollab/widgets/app_bar.dart';
 
 class Tags {
   final int id;
@@ -28,27 +29,19 @@ class _InterestGroupTagsState extends State<InterestGroupTags> {
     Tags(id: 7, name: "Data Science"),
   ];
   final _items = _modules
-      .map((animal) => MultiSelectItem<Tags>(animal, animal.name))
+      .map((interest) => MultiSelectItem<Tags>(interest, interest.name))
       .toList();
-  List<Tags> _selectedmodules = [];
   List<Tags> _selectedmodules2 = [];
-  List<Tags> _selectedmodules3 = [];
-  List<Tags> _selectedmodules4 = [];
-  List<Tags> _selectedmodules5 = [];
-  final _multiSelectKey = GlobalKey<FormFieldState>();
 
   @override
   void initState() {
-    _selectedmodules5 = _modules;
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Select Tags"),
-      ),
+      appBar: AppbarWidget.getAppBar("Select Tags", Colors.blue[400], Colors.white),
       body: SingleChildScrollView(
         child: Container(
           alignment: Alignment.center,
@@ -56,171 +49,64 @@ class _InterestGroupTagsState extends State<InterestGroupTags> {
           child: Flexible(
             child: Column(
               children: <Widget>[
-                Row(
-                  children: <Widget>[
-                    Align(
-                        alignment: Alignment.topLeft,
-                        child: Image(
-                            image: AssetImage("assets/images/logo.png"),
-                            height: 50.0)),
-                    SizedBox(width: 30),
-                    Text("Interests",style: TextStyle(fontSize: 40),)
-                  ],
+                Text(
+                  "Interests",
+                  style: TextStyle(fontSize: 40),
                 ),
                 SizedBox(height: 20),
                 Image(
                   image: AssetImage("assets/images/interest.png"),
-                  height: 160.0,
+                  height: 200.0,
                 ),
-//                SizedBox(height: 40),
-//                //################################################################################################
-//                // Rounded blue MultiSelectDialogField
-//                //################################################################################################
-//                MultiSelectDialogField(
-//                  items: _items,
-//                  title: Text("Modules"),
-//                  selectedColor: Colors.blue,
-//                  decoration: BoxDecoration(
-//                    color: Colors.blue.withOpacity(0.1),
-//                    borderRadius: BorderRadius.all(Radius.circular(40)),
-//                    border: Border.all(
-//                      color: Colors.blue,
-//                      width: 2,
-//                    ),
-//                  ),
-//                  buttonIcon: Icon(
-//                    Icons.book,
-//                    color: Colors.blue,
-//                  ),
-//                  buttonText: Text(
-//                    "Module Tags",
-//                    style: TextStyle(
-//                      color: Colors.blue[800],
-//                      fontSize: 16,
-//                    ),
-//                  ),
-//                  onConfirm: (results) {
-//                    _selectedmodules = results;
-//                  },
-//                ),
-//                SizedBox(height: 50),
-//                //################################################################################################
-//                // This MultiSelectBottomSheetField has no decoration, but is instead wrapped in a Container that has
-//                // decoration applied. This allows the ChipDisplay to render inside the same Container.
-//                //################################################################################################
-//                Container(
-//                  decoration: BoxDecoration(
-//                    color: Theme.of(context).primaryColor.withOpacity(.4),
-//                    border: Border.all(
-//                      color: Theme.of(context).primaryColor,
-//                      width: 2,
-//                    ),
-//                  ),
-//                  child: Column(
-//                    children: <Widget>[
-//                      MultiSelectBottomSheetField(
-//                        initialChildSize: 0.4,
-//                        listType: MultiSelectListType.CHIP,
-//                        searchable: true,
-//                        buttonText: Text("Module Tags"),
-//                        title: Text("Modules"),
-//                        items: _items,
-//                        onConfirm: (values) {
-//                          _selectedmodules2 = values;
-//                        },
-//                        chipDisplay: MultiSelectChipDisplay(
-//                          onTap: (value) {
-//                            setState(() {
-//                              _selectedmodules2.remove(value);
-//                            });
-//                          },
-//                        ),
-//                      ),
-//                      _selectedmodules2 == null || _selectedmodules2.isEmpty
-//                          ? Container(
-//                          padding: EdgeInsets.all(10),
-//                          alignment: Alignment.centerLeft,
-//                          child: Text(
-//                            "None selected",
-//                            style: TextStyle(color: Colors.black54),
-//                          ))
-//                          : Container(),
-//                    ],
-//                  ),
-//                ),
-//                SizedBox(height: 40),
-//                //################################################################################################
-//                // MultiSelectBottomSheetField with validators
-//                //################################################################################################
-//                MultiSelectBottomSheetField<Tags>(
-//                  key: _multiSelectKey,
-//                  initialChildSize: 0.7,
-//                  maxChildSize: 0.95,
-//                  title: Text("Modules"),
-//                  buttonText: Text("Module Tags"),
-//                  items: _items,
-//                  searchable: true,
-//                  validator: (values) {
-//                    if (values == null || values.isEmpty) {
-//                      return "Required";
-//                    }
-//                    List<String> names = values.map((e) => e.name).toList();
-//                    if (names.contains("Frog")) {
-//                      return "Frogs are weird!";
-//                    }
-//                    return null;
-//                  },
-//                  onConfirm: (values) {
-//                    setState(() {
-//                      _selectedmodules3 = values;
-//                    });
-//                    _multiSelectKey.currentState.validate();
-//                  },
-//                  chipDisplay: MultiSelectChipDisplay(
-//                    onTap: (item) {
-//                      setState(() {
-//                        _selectedmodules3.remove(item);
-//                      });
-//                      _multiSelectKey.currentState.validate();
-//                    },
-//                  ),
-//                ),
                 SizedBox(height: 40),
-//                //################################################################################################
-//                // MultiSelectChipField
-//                //################################################################################################
-                MultiSelectChipField(
-                  items: _items,
-                  title: Text("Modules"),
-                  headerColor: Colors.blue.withOpacity(0.5),
+                Container(
                   decoration: BoxDecoration(
-                    border: Border.all(color: Colors.blue[700], width: 1.8),
+                    color: Theme.of(context).primaryColor.withOpacity(.4),
+                    border: Border.all(
+                      color: Theme.of(context).primaryColor,
+                      width: 2,
+                    ),
                   ),
-                  selectedChipColor: Colors.blue.withOpacity(0.5),
-                  selectedTextStyle: TextStyle(color: Colors.blue[800]),
-                  onTap: (values) {
-                    _selectedmodules4 = values;
-                  },
+                  child: Column(
+                    children: <Widget>[
+                      MultiSelectBottomSheetField(
+                        initialChildSize: 0.4,
+                        listType: MultiSelectListType.CHIP,
+                        searchable: true,
+                        buttonText: Text("Interest Tags"),
+                        title: Text("Interests"),
+                        items: _items,
+                        onConfirm: (values) {
+                          _selectedmodules2 = values;
+                        },
+                        chipDisplay: MultiSelectChipDisplay(
+                          onTap: (value) {
+                            setState(() {
+                              _selectedmodules2.remove(value);
+                            });
+                          },
+                        ),
+                        onSelectionChanged: (values){
+                          print(values);
+                        },
+                      ),
+                      _selectedmodules2 == null || _selectedmodules2.isEmpty
+                          ? Container(
+                          padding: EdgeInsets.all(10),
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            "None selected",
+                            style: TextStyle(color: Colors.black54),
+                          ))
+                          : Container(),
+                    ],
+                  ),
                 ),
                 SizedBox(height: 40),
-                //################################################################################################
-                // MultiSelectDialogField with initial values
-                //################################################################################################
-//                MultiSelectDialogField(
-//                  items: _items,
-//                  initialValue:
-//                  _selectedmodules5, // setting the value of this in initState() to pre-select values.
-//                ),
-//                ElevatedButton(
-//                  child: Text('Next'),
-//                  onPressed: () {
-//                  },
-//                ),
                 Container(
                   width: 110,
                   child: RaisedButton(
                       onPressed: () {
-
                       },
                       child: Row(
                         children: <Widget>[
