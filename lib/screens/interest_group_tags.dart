@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:multi_select_flutter/multi_select_flutter.dart';
+import 'package:ntucollab/screens/group_detail.dart';
 import 'package:ntucollab/widgets/app_bar.dart';
 
 class Tags {
@@ -19,19 +20,19 @@ class InterestGroupTags extends StatefulWidget {
 
 class _InterestGroupTagsState extends State<InterestGroupTags> {
 
-  static List<Tags> _modules = [
-    Tags(id: 1, name: "Mathematics"),
-    Tags(id: 2, name: "Physics"),
-    Tags(id: 3, name: "Machine Learning"),
-    Tags(id: 4, name: "Software Engineering"),
-    Tags(id: 5, name: "Astronomy"),
-    Tags(id: 6, name: "Accounting"),
-    Tags(id: 7, name: "Data Science"),
+  static List<Tags> _interests = [
+    Tags(id: 1, name: "Running"),
+    Tags(id: 2, name: "Tennis"),
+    Tags(id: 3, name: "Hackathons"),
+    Tags(id: 4, name: "Google Workshops"),
+    Tags(id: 5, name: "Badminton"),
+    Tags(id: 6, name: "Trekking"),
+    Tags(id: 7, name: "Debating"),
   ];
-  final _items = _modules
+  final _items = _interests
       .map((interest) => MultiSelectItem<Tags>(interest, interest.name))
       .toList();
-  List<Tags> _selectedmodules2 = [];
+  List<Tags> _selectedInterests = [];
 
   @override
   void initState() {
@@ -71,18 +72,19 @@ class _InterestGroupTagsState extends State<InterestGroupTags> {
                     children: <Widget>[
                       MultiSelectBottomSheetField(
                         initialChildSize: 0.4,
+                        initialValue: _interests,
                         listType: MultiSelectListType.CHIP,
                         searchable: true,
                         buttonText: Text("Interest Tags"),
                         title: Text("Interests"),
                         items: _items,
                         onConfirm: (values) {
-                          _selectedmodules2 = values;
+                          _selectedInterests = values;
                         },
                         chipDisplay: MultiSelectChipDisplay(
                           onTap: (value) {
                             setState(() {
-                              _selectedmodules2.remove(value);
+                              _selectedInterests.remove(value);
                             });
                           },
                         ),
@@ -90,7 +92,7 @@ class _InterestGroupTagsState extends State<InterestGroupTags> {
                           print(values);
                         },
                       ),
-                      _selectedmodules2 == null || _selectedmodules2.isEmpty
+                      _selectedInterests == null || _selectedInterests.isEmpty
                           ? Container(
                           padding: EdgeInsets.all(10),
                           alignment: Alignment.centerLeft,
@@ -107,6 +109,10 @@ class _InterestGroupTagsState extends State<InterestGroupTags> {
                   width: 110,
                   child: RaisedButton(
                       onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => GroupDetailsPage()),
+                        );
                       },
                       child: Row(
                         children: <Widget>[
