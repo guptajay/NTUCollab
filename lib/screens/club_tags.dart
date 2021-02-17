@@ -2,16 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:multi_select_flutter/multi_select_flutter.dart';
 import 'package:ntucollab/screens/interest_group_tags.dart';
 import 'package:ntucollab/widgets/app_bar.dart';
-
-class Tags {
-  final int id;
-  final String name;
-
-  Tags({
-    this.id,
-    this.name,
-  });
-}
+import 'package:ntucollab/models/Tags.dart';
 
 class ClubTags extends StatefulWidget {
   @override
@@ -20,19 +11,19 @@ class ClubTags extends StatefulWidget {
 
 class _ClubTagsState extends State<ClubTags> {
 
-  static List<Tags> _modules = [
-    Tags(id: 1, name: "Mathematics"),
-    Tags(id: 2, name: "Physics"),
-    Tags(id: 3, name: "Machine Learning"),
-    Tags(id: 4, name: "Software Engineering"),
-    Tags(id: 5, name: "Astronomy"),
-    Tags(id: 6, name: "Accounting"),
-    Tags(id: 7, name: "Data Science"),
+  static List<Tags> _clubs = [
+    Tags(id: 1, name: "Debating Society"),
+    Tags(id: 2, name: "BlockChain"),
+    Tags(id: 3, name: "Open Source Society"),
+    Tags(id: 4, name: "Toastmaster"),
+    Tags(id: 5, name: "Red Cross"),
+    Tags(id: 6, name: "Friends of Children"),
+    Tags(id: 7, name: "SCSE Club"),
   ];
-  final _items = _modules
+  final _items = _clubs
       .map((clubs) => MultiSelectItem<Tags>(clubs, clubs.name))
       .toList();
-  List<Tags> _selectedmodules2 = [];
+  List<Tags> _selectedClubs = [];
 
   @override
   void initState() {
@@ -72,18 +63,19 @@ class _ClubTagsState extends State<ClubTags> {
                     children: <Widget>[
                       MultiSelectBottomSheetField(
                         initialChildSize: 0.4,
+                        initialValue: _clubs,
                         listType: MultiSelectListType.CHIP,
                         searchable: true,
                         buttonText: Text("Club Tags"),
                         title: Text("Clubs"),
                         items: _items,
                         onConfirm: (values) {
-                          _selectedmodules2 = values;
+                          _selectedClubs = values;
                         },
                         chipDisplay: MultiSelectChipDisplay(
                           onTap: (value) {
                             setState(() {
-                              _selectedmodules2.remove(value);
+                              _selectedClubs.remove(value);
                             });
                           },
                         ),
@@ -91,7 +83,7 @@ class _ClubTagsState extends State<ClubTags> {
                           print(values);
                         },
                       ),
-                      _selectedmodules2 == null || _selectedmodules2.isEmpty
+                      _selectedClubs == null || _selectedClubs.isEmpty
                           ? Container(
                           padding: EdgeInsets.all(10),
                           alignment: Alignment.centerLeft,

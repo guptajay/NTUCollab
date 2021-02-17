@@ -2,16 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:multi_select_flutter/multi_select_flutter.dart';
 import 'package:ntucollab/screens/club_tags.dart';
 import 'package:ntucollab/widgets/app_bar.dart';
-
-class Tags {
-  final int id;
-  final String name;
-
-  Tags({
-    this.id,
-    this.name,
-  });
-}
+import 'package:ntucollab/models/Tags.dart';
 
 class ModuleTagsPage extends StatefulWidget {
   @override
@@ -31,7 +22,7 @@ class _ModuleTagsPageState extends State<ModuleTagsPage> {
   final _items = _modules
       .map((module) => MultiSelectItem<Tags>(module, module.name))
       .toList();
-  List<Tags> _selectedmodules2 = [];
+  List<Tags> _selectedModules = [];
   @override
   void initState() {
     super.initState();
@@ -70,18 +61,19 @@ class _ModuleTagsPageState extends State<ModuleTagsPage> {
                     children: <Widget>[
                       MultiSelectBottomSheetField(
                         initialChildSize: 0.4,
+                        initialValue: _modules,
                         listType: MultiSelectListType.CHIP,
                         searchable: true,
                         buttonText: Text("Module Tags"),
                         title: Text("Modules"),
                         items: _items,
                         onConfirm: (values) {
-                          _selectedmodules2 = values;
+                          _selectedModules = values;
                         },
                         chipDisplay: MultiSelectChipDisplay(
                           onTap: (value) {
                             setState(() {
-                              _selectedmodules2.remove(value);
+                              _selectedModules.remove(value);
                             });
                           },
                         ),
@@ -89,7 +81,7 @@ class _ModuleTagsPageState extends State<ModuleTagsPage> {
                           print(values);
                         },
                       ),
-                      _selectedmodules2 == null || _selectedmodules2.isEmpty
+                      _selectedModules == null || _selectedModules.isEmpty
                           ? Container(
                               padding: EdgeInsets.all(10),
                               alignment: Alignment.centerLeft,
