@@ -2,16 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:multi_select_flutter/multi_select_flutter.dart';
 import 'package:ntucollab/screens/club_tags.dart';
 import 'package:ntucollab/widgets/app_bar.dart';
-
-class Tags {
-  final int id;
-  final String name;
-
-  Tags({
-    this.id,
-    this.name,
-  });
-}
+import 'package:ntucollab/models/Tags.dart';
 
 class ModuleTagsPage extends StatefulWidget {
   @override

@@ -3,6 +3,8 @@ import 'package:ntucollab/widgets/app_bar.dart';
 import 'package:multi_select_flutter/multi_select_flutter.dart';
 import 'package:ntucollab/widgets/group_detail_card.dart';
 import 'package:ntucollab/widgets/post_card.dart';
+import 'package:ntucollab/models/Tags.dart';
+import 'package:ntucollab/models/Comment.dart';
 
 class StarDisplay extends StatelessWidget {
   final int value;
@@ -22,36 +24,50 @@ class StarDisplay extends StatelessWidget {
   }
 }
 
-class Tags {
-  final int id;
-  final String name;
-
-  Tags({
-    this.id,
-    this.name,
-  });
-}
-
 class GroupDetailsPage extends StatefulWidget {
+  final String name;
+  final String offeredBy;
+  final String year;
+  final String details;
+  final String rating1;
+  final int ratingValue1;
+  final String rating2;
+  final int ratingValue2;
+  final String rating3;
+  final int ratingValue3;
+  final List<Tags> modulesTagList;
+  final List<Comment> comments;
+  const GroupDetailsPage(
+      {Key key,
+      @required this.name,
+      @required this.offeredBy,
+      @required this.year,
+      @required this.details,
+      @required this.rating1,
+      @required this.ratingValue1,
+      @required this.rating2,
+      @required this.ratingValue2,
+      @required this.rating3,
+      @required this.ratingValue3,
+      @required this.modulesTagList,
+      @required this.comments})
+      : super(key: key);
+
   @override
   _GroupDetailsPageState createState() => _GroupDetailsPageState();
 }
 
 class _GroupDetailsPageState extends State<GroupDetailsPage> {
-  static List<Tags> _modules = [
-    Tags(id: 1, name: "Mathematics"),
-    Tags(id: 2, name: "Data Science"),
-    Tags(id: 3, name: "Algebra"),
-  ];
-  final _items = _modules
-      .map((animal) => MultiSelectItem<Tags>(animal, animal.name))
-      .toList();
+  static List _items;
   List<Tags> tags = [];
 
   @override
   void initState() {
     super.initState();
-    tags = _modules;
+    _items = widget.modulesTagList
+        .map((animal) => MultiSelectItem<Tags>(animal, animal.name))
+        .toList();
+    tags = widget.modulesTagList;
   }
 
   @override
@@ -64,16 +80,16 @@ class _GroupDetailsPageState extends State<GroupDetailsPage> {
           GroupDetailsCard.getGroupDetailsCard(
               Icons.bar_chart,
               _items,
-              "CZ4041 - Machine Learning",
-              "SCSE",
-              "4",
-              "This course introduces to the basic concepts used in Machine Learning.",
-              "Difficulty",
-              4,
-              "Time",
-              2,
-              "Demand",
-              3),
+              widget.name,
+              widget.offeredBy,
+              widget.year,
+              widget.details,
+              widget.rating1,
+              widget.ratingValue1,
+              widget.rating2,
+              widget.ratingValue2,
+              widget.rating3,
+              widget.ratingValue3),
           Align(
               alignment: Alignment.centerLeft,
               child: Padding(
@@ -83,12 +99,15 @@ class _GroupDetailsPageState extends State<GroupDetailsPage> {
                         TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
               )),
           PostCard.getPostCard(
-              "SCSE - MUNDHRA DIVYESH",
-              "This course is quite tough but the lecturer is quite helpful.",
-              "3",
-              "1"),
-          PostCard.getPostCard("SCSE - GUPTA JAY",
-              "Easy to score in CA's but final exam is difficult.", "2", "2")
+              widget.comments[0].name,
+              widget.comments[0].comment,
+              widget.comments[0].likeCount,
+              widget.comments[0].commentCount),
+          PostCard.getPostCard(
+              widget.comments[1].name,
+              widget.comments[1].comment,
+              widget.comments[1].likeCount,
+              widget.comments[1].commentCount),
         ])));
   }
 }

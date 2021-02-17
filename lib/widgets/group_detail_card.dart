@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:multi_select_flutter/multi_select_flutter.dart';
+import 'package:ntucollab/models/Tags.dart';
 
 class StarDisplay extends StatelessWidget {
   final int value;
@@ -17,16 +18,6 @@ class StarDisplay extends StatelessWidget {
       }),
     );
   }
-}
-
-class Tags {
-  final int id;
-  final String name;
-
-  Tags({
-    this.id,
-    this.name,
-  });
 }
 
 class GroupDetailsCard {

@@ -1,17 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:multi_select_flutter/multi_select_flutter.dart';
-import 'package:ntucollab/screens/group_detail.dart';
 import 'package:ntucollab/widgets/app_bar.dart';
-
-class Tags {
-  final int id;
-  final String name;
-
-  Tags({
-    this.id,
-    this.name,
-  });
-}
+import 'package:ntucollab/models/Tags.dart';
+import 'package:ntucollab/screens/home.dart';
 
 class InterestGroupTags extends StatefulWidget {
   @override
@@ -111,7 +102,7 @@ class _InterestGroupTagsState extends State<InterestGroupTags> {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => GroupDetailsPage()),
+                          MaterialPageRoute(builder: (context) => Home()),
                         );
                       },
                       child: Row(
