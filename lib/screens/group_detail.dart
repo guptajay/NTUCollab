@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ntucollab/widgets/app_bar.dart';
 import 'package:multi_select_flutter/multi_select_flutter.dart';
 import 'package:ntucollab/widgets/group_detail_card.dart';
+import 'package:ntucollab/widgets/post_card.dart';
 
 class StarDisplay extends StatelessWidget {
   final int value;
@@ -59,18 +60,35 @@ class _GroupDetailsPageState extends State<GroupDetailsPage> {
         appBar: AppbarWidget.getAppBar(
             "Group Details", Colors.blue[400], Colors.white),
         body: SingleChildScrollView(
-            child: GroupDetailsCard.getGroupDetailsCard(
-                Icons.bar_chart,
-                _items,
-                "CZ4041 - Machine Learning",
-                "SCSE",
-                "4",
-                "This course introduces to the basic concepts used in Machine Learning.",
-                "Difficulty",
-                4,
-                "Time",
-                2,
-                "Demand",
-                3)));
+            child: Column(children: <Widget>[
+          GroupDetailsCard.getGroupDetailsCard(
+              Icons.bar_chart,
+              _items,
+              "CZ4041 - Machine Learning",
+              "SCSE",
+              "4",
+              "This course introduces to the basic concepts used in Machine Learning.",
+              "Difficulty",
+              4,
+              "Time",
+              2,
+              "Demand",
+              3),
+          Align(
+              alignment: Alignment.centerLeft,
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(10.0, 0, 0, 0),
+                child: Text("Posts: ",
+                    style:
+                        TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+              )),
+          PostCard.getPostCard(
+              "SCSE - MUNDHRA DIVYESH",
+              "This course is quite tough but the lecturer is quite helpful.",
+              "3",
+              "1"),
+          PostCard.getPostCard("SCSE - GUPTA JAY",
+              "Easy to score in CA's but final exam is difficult.", "2", "2")
+        ])));
   }
 }
