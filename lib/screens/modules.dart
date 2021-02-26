@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
-import 'package:ntucollab/models/RecommenderData.dart';
+import 'package:ntucollab/models/recommend_data.dart';
 import 'package:ntucollab/screens/group_detail.dart';
 import 'package:ntucollab/screens/home.dart';
 import 'package:ntucollab/services/auth.dart';
@@ -37,7 +37,7 @@ class Modules extends StatelessWidget {
                   height: 270,
                   padding: const EdgeInsets.only(left: 32),
                   child: Swiper(
-                    itemCount: recommendData.length,
+                    itemCount: recommendModule.length,
                     itemWidth: MediaQuery.of(context).size.width - 2 * 64,
                     layout: SwiperLayout.STACK,
                     pagination: SwiperPagination(
@@ -51,21 +51,21 @@ class Modules extends StatelessWidget {
                               context,
                               PageRouteBuilder(pageBuilder: (context, a, b) {
                                 return GroupDetailsPage(
-                                    name: recommendData[index].name,
-                                    offeredBy: recommendData[index].offeredBy,
-                                    year: recommendData[index].year,
-                                    details: recommendData[index].details,
-                                    modulesTagList: recommendData[index].tags,
-                                    comments: recommendData[index].comments,
-                                    rating1: recommendData[index].rating1,
+                                    name: recommendModule[index].name,
+                                    offeredBy: recommendModule[index].offeredBy,
+                                    year: recommendModule[index].year,
+                                    details: recommendModule[index].details,
+                                    modulesTagList: recommendModule[index].tags,
+                                    comments: recommendModule[index].comments,
+                                    rating1: recommendModule[index].rating1,
                                     ratingValue1:
-                                        recommendData[index].ratingValue1,
-                                    rating2: recommendData[index].rating2,
+                                        recommendModule[index].ratingValue1,
+                                    rating2: recommendModule[index].rating2,
                                     ratingValue2:
-                                        recommendData[index].ratingValue2,
-                                    rating3: recommendData[index].rating3,
+                                        recommendModule[index].ratingValue2,
+                                    rating3: recommendModule[index].rating3,
                                     ratingValue3:
-                                        recommendData[index].ratingValue3);
+                                        recommendModule[index].ratingValue3);
                               }),
                             );
                           },
@@ -87,7 +87,7 @@ class Modules extends StatelessWidget {
                                             CrossAxisAlignment.start,
                                         children: <Widget>[
                                           Text(
-                                            recommendData[index].name,
+                                            recommendModule[index].name,
                                             style: TextStyle(
                                               fontSize: 24,
                                               color: const Color(0xff47455f),
@@ -96,7 +96,7 @@ class Modules extends StatelessWidget {
                                             textAlign: TextAlign.left,
                                           ),
                                           Text(
-                                            recommendData[index].tagText,
+                                            recommendModule[index].tagText,
                                             style: TextStyle(
                                               fontSize: 15,
                                               color: Theme.of(context)
@@ -136,7 +136,7 @@ class Modules extends StatelessWidget {
                                 right: 24,
                                 bottom: 60,
                                 child: Text(
-                                  recommendData[index].position.toString(),
+                                  recommendModule[index].position.toString(),
                                   style: TextStyle(
                                     fontSize: 200,
                                     color: Theme.of(context)

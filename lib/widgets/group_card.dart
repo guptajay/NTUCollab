@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ntucollab/screens/group_detail.dart';
-import 'package:ntucollab/models/RecommenderData.dart';
+import 'package:ntucollab/models/recommend_data.dart';
 
 class GroupCard {
   static getGroupCard(
@@ -36,21 +36,21 @@ class GroupCard {
                           context,
                           MaterialPageRoute(
                               builder: (context) => GroupDetailsPage(
-                                  name: recommendData[index].name,
-                                  offeredBy: recommendData[index].offeredBy,
-                                  year: recommendData[index].year,
-                                  details: recommendData[index].details,
-                                  modulesTagList: recommendData[index].tags,
-                                  comments: recommendData[index].comments,
-                                  rating1: recommendData[index].rating1,
+                                  name: recommendModule[index].name,
+                                  offeredBy: recommendModule[index].offeredBy,
+                                  year: recommendModule[index].year,
+                                  details: recommendModule[index].details,
+                                  modulesTagList: recommendModule[index].tags,
+                                  comments: recommendModule[index].comments,
+                                  rating1: recommendModule[index].rating1,
                                   ratingValue1:
-                                      recommendData[index].ratingValue1,
-                                  rating2: recommendData[index].rating2,
+                                  recommendModule[index].ratingValue1,
+                                  rating2: recommendModule[index].rating2,
                                   ratingValue2:
-                                      recommendData[index].ratingValue2,
-                                  rating3: recommendData[index].rating3,
+                                  recommendModule[index].ratingValue2,
+                                  rating3: recommendModule[index].rating3,
                                   ratingValue3:
-                                      recommendData[index].ratingValue3)),
+                                  recommendModule[index].ratingValue3)),
                         );
                       },
                     ),
