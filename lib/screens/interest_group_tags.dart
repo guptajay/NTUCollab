@@ -3,6 +3,7 @@ import 'package:multi_select_flutter/multi_select_flutter.dart';
 import 'package:ntucollab/widgets/app_bar.dart';
 import 'package:ntucollab/models/Tags.dart';
 import 'package:ntucollab/screens/home.dart';
+import 'package:ntucollab/screens/all_groups.dart';
 
 class InterestGroupTags extends StatefulWidget {
   @override
@@ -116,7 +117,25 @@ class _InterestGroupTagsState extends State<InterestGroupTags> {
                           Icon(Icons.arrow_forward, color: Colors.black)
                         ],
                       )),
-                )
+                ),
+                RaisedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => AllGroupPage()),
+                      );
+                    },
+                    child: Row(
+                      children: <Widget>[
+                        Text('Navigate to my groups',
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.w700,
+                              color: Colors.black,
+                            )),
+                        Icon(Icons.arrow_forward, color: Colors.black)
+                      ],
+                    )),
               ],
             ),
           ),

@@ -79,46 +79,56 @@ class GroupDetailsCard {
           SizedBox(height: 10),
           Row(
             children: [
-              SizedBox(width: 20),
-              IconTheme(
-                data: IconThemeData(
-                  color: Colors.amber,
-                  size: 20,
-                ),
-                child: StarDisplay(value: ratingValue1),
+              Column(
+                children: [
+                  Row(
+                    children: [
+                      SizedBox(width: 20),
+                      IconTheme(
+                        data: IconThemeData(
+                          color: Colors.amber,
+                          size: 20,
+                        ),
+                        child: StarDisplay(value: ratingValue1),
+                      ),
+                      SizedBox(width: 20),
+                      Text(rating1, style: TextStyle(fontSize: 20))
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      SizedBox(width: 20),
+                      IconTheme(
+                        data: IconThemeData(
+                          color: Colors.amber,
+                          size: 20,
+                        ),
+                        child: StarDisplay(value: ratingValue2),
+                      ),
+                      SizedBox(width: 20),
+                      Text(rating2, style: TextStyle(fontSize: 20))
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      SizedBox(width: 20),
+                      IconTheme(
+                        data: IconThemeData(
+                          color: Colors.amber,
+                          size: 20,
+                        ),
+                        child: StarDisplay(value: ratingValue3),
+                      ),
+                      SizedBox(width: 20),
+                      Text(rating3, style: TextStyle(fontSize: 20))
+                    ],
+                  ),
+                ],
               ),
-              SizedBox(width: 20),
-              Text(rating1, style: TextStyle(fontSize: 20))
+
             ],
           ),
-          Row(
-            children: [
-              SizedBox(width: 20),
-              IconTheme(
-                data: IconThemeData(
-                  color: Colors.amber,
-                  size: 20,
-                ),
-                child: StarDisplay(value: ratingValue2),
-              ),
-              SizedBox(width: 20),
-              Text(rating2, style: TextStyle(fontSize: 20))
-            ],
-          ),
-          Row(
-            children: [
-              SizedBox(width: 20),
-              IconTheme(
-                data: IconThemeData(
-                  color: Colors.amber,
-                  size: 20,
-                ),
-                child: StarDisplay(value: ratingValue3),
-              ),
-              SizedBox(width: 20),
-              Text(rating3, style: TextStyle(fontSize: 20))
-            ],
-          ),
+
           SizedBox(height: 15),
           MultiSelectChipField(
             items: _items,

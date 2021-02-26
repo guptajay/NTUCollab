@@ -5,6 +5,7 @@ import 'package:ntucollab/widgets/group_detail_card.dart';
 import 'package:ntucollab/widgets/post_card.dart';
 import 'package:ntucollab/models/Tags.dart';
 import 'package:ntucollab/models/Comment.dart';
+import 'package:rating_dialog/rating_dialog.dart';
 
 class StarDisplay extends StatelessWidget {
   final int value;
@@ -61,6 +62,64 @@ class _GroupDetailsPageState extends State<GroupDetailsPage> {
   static List _items;
   List<Tags> tags = [];
 
+  void show() {
+    showDialog(
+        context: context,
+        barrierDismissible: true, // set to false if you want to force a rating
+        builder: (context) {
+          return Scaffold(
+            body: Container(
+              child: Column(
+                children: [
+                  RatingDialog(
+                    icon: const Icon(
+                      Icons.star,
+                      size: 5,
+                      color: Colors.blue,
+                    ), // set your own image/icon widget
+                    title: "Please rate Demand out of 5",
+                    description: "Tap a star to give your rating.",
+                    submitButton: "SUBMIT",
+                    accentColor: Colors.blue, // optional
+                    onSubmitPressed: (int rating) {
+//              print("onSubmitPressed: rating = $rating");
+                    },
+                  ),
+                  RatingDialog(
+                    icon: const Icon(
+                      Icons.star,
+                      size: 5,
+                      color: Colors.blue,
+                    ), // set your own image/icon widget
+                    title: "Please rate Difficulty out of 5",
+                    description: "Tap a star to give your rating.",
+                    submitButton: "SUBMIT",
+                    accentColor: Colors.blue, // optional
+                    onSubmitPressed: (int rating) {
+//              print("onSubmitPressed: rating = $rating");
+                    },
+                  ),
+                  RatingDialog(
+                    icon: const Icon(
+                      Icons.star,
+                      size: 5,
+                      color: Colors.blue,
+                    ), // set your own image/icon widget
+                    title: "Please rate Time out of 5",
+                    description: "Tap a star to give your rating.",
+                    submitButton: "SUBMIT",
+                    accentColor: Colors.blue, // optional
+                    onSubmitPressed: (int rating) {
+//              print("onSubmitPressed: rating = $rating");
+                    },
+                  ),
+                ],
+              ),
+            ),
+          );
+        });
+  }
+
   @override
   void initState() {
     super.initState();
@@ -90,6 +149,19 @@ class _GroupDetailsPageState extends State<GroupDetailsPage> {
               widget.ratingValue2,
               widget.rating3,
               widget.ratingValue3),
+          RaisedButton(
+            onPressed: () {
+              show();
+            },
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(18.0),
+                side: BorderSide(color: Colors.blue)),
+            color: Colors.blue[200],
+            child: Text(
+              "Rate",
+              style: TextStyle(fontSize: 20),
+            ),
+          ),
           Align(
               alignment: Alignment.centerLeft,
               child: Padding(
