@@ -6,6 +6,7 @@ class PostCard {
     String content,
     String likeCount,
     String commentCount,
+
   ) {
     return Container(
         padding: EdgeInsets.fromLTRB(10, 10, 10, 0),

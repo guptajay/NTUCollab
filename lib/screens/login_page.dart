@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ntucollab/screens/all_groups.dart';
 import 'package:ntucollab/screens/home.dart';
 import 'package:ntucollab/screens/module_tags.dart';
 import 'package:ntucollab/services/auth.dart';
@@ -70,6 +71,15 @@ class _LoginPageState extends State<LoginPage> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => ModuleTagsPage()),
+                    );
+                  },
+                ),
+                ElevatedButton(
+                  child: Text('All groups page'),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => AllGroupPage()),
                     );
                   },
                 ),
