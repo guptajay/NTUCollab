@@ -19,6 +19,7 @@ class _ModuleTagsPageState extends State<ModuleTagsPage> {
     Tags(id: 6, name: "Accounting"),
     Tags(id: 7, name: "Data Science"),
   ];
+
   final _items = _modules
       .map((module) => MultiSelectItem<Tags>(module, module.name))
       .toList();
@@ -94,27 +95,35 @@ class _ModuleTagsPageState extends State<ModuleTagsPage> {
                   ),
                 ),
                 SizedBox(height: 40),
-                Container(
-                  width: 110,
-                  child: RaisedButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => ClubTags()),
-                        );
-                      },
-                      child: Row(
-                        children: <Widget>[
-                          Text('Next',
-                              style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.w700,
-                                color: Colors.black,
-                              )),
-                          Icon(Icons.arrow_forward, color: Colors.black)
-                        ],
-                      )),
-                )
+                OutlineButton(
+                  splashColor: Colors.grey,
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ClubTags()),
+                    );
+                  },
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
+                  highlightElevation: 0,
+                  borderSide: BorderSide(color: Colors.grey),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text(
+                          'Next',
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.blue[600],
+                          ),
+                        ),
+                        Icon(Icons.arrow_forward, color: Colors.blue[600])
+                      ],
+                    ),
+                  ),
+                ),
               ],
             ),
           ),

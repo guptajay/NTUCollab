@@ -77,8 +77,6 @@ class GroupDetailsCard {
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold))
           ]),
           SizedBox(height: 10),
-          Row(
-            children: [
               Column(
                 children: [
                   Row(
@@ -126,8 +124,6 @@ class GroupDetailsCard {
                 ],
               ),
 
-            ],
-          ),
 
           SizedBox(height: 15),
           MultiSelectChipField(

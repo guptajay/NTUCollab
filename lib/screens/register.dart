@@ -68,7 +68,11 @@ class _RegisterPageState extends State<RegisterPage> {
                     height: 60 * _scale,
                   ),
                   RoundedInputField(
-                    hintText: "Your Email",
+                    hintText: "Full Name",
+                    onChanged: (value) {},
+                  ),
+                  RoundedInputField(
+                    hintText: "Email",
                     onChanged: (value) {},
                   ),
                   RoundedPasswordField(

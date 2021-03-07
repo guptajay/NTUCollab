@@ -19,7 +19,7 @@ class GroupCard {
                 children: <Widget>[
                   Text(name,
                       style:
-                          TextStyle(fontSize: 40, fontWeight: FontWeight.bold)),
+                          TextStyle(fontSize: 40, fontWeight: FontWeight.bold,)),
                   Padding(
                     padding: EdgeInsets.fromLTRB(5, 10, 5, 5),
                     child: RaisedButton(
