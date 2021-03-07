@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:ntucollab/widgets/app_bar.dart';
 import 'package:ntucollab/models/recommend_data.dart';
+import 'all_groups.dart';
 import 'group_detail.dart';
 
 class Groups extends StatelessWidget {
@@ -149,7 +150,36 @@ class Groups extends StatelessWidget {
                     },
                   ),
                 ),
-
+                SizedBox(height: 50,),
+                OutlineButton(
+                  splashColor: Colors.grey,
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => AllGroupPage()),
+                    );
+                  },
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
+                  highlightElevation: 0,
+                  borderSide: BorderSide(color: Colors.grey),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text(
+                          'Navigate to my Groups',
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.blue[600],
+                          ),
+                        ),
+                        Icon(Icons.arrow_forward, color: Colors.blue[600])
+                      ],
+                    ),
+                  ),
+                ),
               ],
             ),
           ),

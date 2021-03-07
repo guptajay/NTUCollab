@@ -156,7 +156,7 @@ class _LoginPageState extends State<LoginPage> {
                     height: 10,
                   ),
                   SizedBox(
-                    height: 10 * _scale,
+                    height: 100 * _scale,
                   ),
                   Text("Eagles Inc.",
                       style: TextStyle(
@@ -189,7 +189,7 @@ class _LoginPageState extends State<LoginPage> {
             Navigator.of(context).push(
               MaterialPageRoute(
                 builder: (context) {
-                  return Home();
+                  return ModuleTagsPage();
                 },
               ),
             );
