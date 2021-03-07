@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:multi_select_flutter/multi_select_flutter.dart';
-import 'package:ntucollab/models/Tags.dart';
 import 'package:rating_dialog/rating_dialog.dart';
 
 class StarDisplay extends StatelessWidget {
@@ -79,13 +78,8 @@ void show(context) {
       });
 }
 
-class GroupDetailsCard {
-  List<Tags> tags = [
-    Tags(id: 1, name: "Mathematics"),
-    Tags(id: 2, name: "Data Science"),
-    Tags(id: 3, name: "Algebra"),
-  ];
-  static getGroupDetailsCard(
+class ModuleDetailsCard {
+  static getModuleDetailsCard(
     BuildContext context,
     IconData icon,
     List _items,

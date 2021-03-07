@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:ntucollab/widgets/app_bar.dart';
 import 'package:multi_select_flutter/multi_select_flutter.dart';
-import 'package:ntucollab/widgets/group_detail_card.dart';
+import 'package:ntucollab/widgets/module_detail_card.dart';
 import 'package:ntucollab/widgets/post_card.dart';
 import 'package:ntucollab/models/Tags.dart';
 import 'package:ntucollab/models/Comment.dart';
-import 'package:rating_dialog/rating_dialog.dart';
 
 class StarDisplay extends StatelessWidget {
   final int value;
@@ -77,7 +76,7 @@ class _GroupDetailsPageState extends State<GroupDetailsPage> {
             "Group Details", Colors.blue[400], Colors.white),
         body: SingleChildScrollView(
             child: Column(children: <Widget>[
-          GroupDetailsCard.getGroupDetailsCard(
+              ModuleDetailsCard.getModuleDetailsCard(
               context,
               Icons.bar_chart,
               _items,
