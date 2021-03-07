@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:ntucollab/widgets/app_bar.dart';
 import 'package:ntucollab/models/recommend_data.dart';
-import 'group_detail.dart';
+import 'club_details.dart';
 
 class Clubs extends StatelessWidget {
   @override
@@ -47,10 +47,8 @@ class Clubs extends StatelessWidget {
                             Navigator.push(
                               context,
                               PageRouteBuilder(pageBuilder: (context, a, b) {
-                                return GroupDetailsPage(
+                                return ClubDetailsPage(
                                     name: recommendClubs[index].name,
-                                    offeredBy: recommendClubs[index].offeredBy,
-                                    year: recommendClubs[index].year,
                                     details: recommendClubs[index].details,
                                     modulesTagList: recommendClubs[index].tags,
                                     comments: recommendClubs[index].comments,

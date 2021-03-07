@@ -160,17 +160,15 @@ List<RecommenderData> recommendModule = [
 
 List<RecommenderData> recommendClubs = [
   RecommenderData(1,
-      name: 'CZ4041 Machine Learning',
+      name: 'NTU Open Source Society',
       tags: [
-        Tags(id: 1, name: "Applied Maths"),
-        Tags(id: 2, name: "Project"),
-        Tags(id: 3, name: "Online")
+        Tags(id: 1, name: "Coding"),
+        Tags(id: 2, name: "Learning"),
+        Tags(id: 3, name: "Collaboration")
       ],
-      tagText: "Applied Maths, Project, Online",
-      offeredBy: "SCSE",
-      year: "4",
+      tagText: "Coding, Learning, Collaboration",
       details:
-      "This course introduces to the basic concepts used in Machine Learning.",
+      "This club holds sessions to train individuals on technical skills. People can collaborate and contribute to the open source community.",
       rating1: "Difficulty",
       ratingValue1: 4,
       rating2: "Time",
@@ -180,28 +178,26 @@ List<RecommenderData> recommendClubs = [
       comments: [
         Comment(
             comment:
-            "This course is quite tough but the lecturer is quite helpful.",
-            name: "SCSE - MUNDHRA DIVYESH",
-            commentCount: "3",
-            likeCount: "2"),
+            "The club is very useful for beginners who want to learn technical skills.",
+            name: "SCSE - XIN LIM",
+            commentCount: "6",
+            likeCount: "8"),
         Comment(
-            comment: "Easy to score in CA's but final exam is difficult.",
+            comment: "The club take special initiatives to hold collaborative sessions among members.",
             name: "SCSE - GUPTA JAY",
-            commentCount: "1",
-            likeCount: "5"),
+            commentCount: "6",
+            likeCount: "7"),
       ]),
   RecommenderData(2,
-      name: 'CZ3005 Artificial Intelligence',
+      name: 'NTU Red Cross Society',
       tags: [
-        Tags(id: 4, name: "AI"),
-        Tags(id: 5, name: "Calculus"),
-        Tags(id: 6, name: "Hard")
+        Tags(id: 4, name: "Health"),
+        Tags(id: 5, name: "Wellbeing"),
+        Tags(id: 6, name: "Community")
       ],
-      tagText: "AI, Calculus, Hard",
-      offeredBy: "SCSE",
-      year: "3",
+      tagText: "Health, Wellbeing, Community",
       details:
-      "This course introduces to the algorithms applied in Artificial Intelligence.",
+      "This club holds sessions and events to contribute to the community through chairty, donations and fundraising",
       rating1: "Difficulty",
       ratingValue1: 2,
       rating2: "Time",
@@ -211,24 +207,22 @@ List<RecommenderData> recommendClubs = [
       comments: [
         Comment(
             comment:
-            "Very easy to score in finals. Group project is difficult.",
-            name: "SCSE - BANSAL ADITYA",
-            commentCount: "3",
-            likeCount: "2"),
+            "The club lacks discipline.",
+            name: "MAE - LU YONG",
+            commentCount: "5",
+            likeCount: "1"),
         Comment(
-            comment: "Choose good group members for the project.",
-            name: "SCSE - BHATIA RITIK",
+            comment: "I felt good giving back to the commmunity by being a part of this club.",
+            name: "CEE - KUMAR RAM",
             commentCount: "4",
             likeCount: "5"),
       ]),
   RecommenderData(3,
-      name: 'CZ3006 Networking',
-      tags: [Tags(id: 7, name: "Network"), Tags(id: 8, name: "Algebra")],
-      tagText: "Network, Algebra",
-      offeredBy: "SCSE",
-      year: "3",
+      name: 'NTU Archery Club',
+      tags: [Tags(id: 7, name: "Sports"), Tags(id: 8, name: "Focus")],
+      tagText: "Sports, Focus",
       details:
-      "This course introduces to the concepts used in Network connection and topology.",
+      "This club trains you on archery sessions",
       rating1: "Difficulty",
       ratingValue1: 4,
       rating2: "Time",
@@ -238,28 +232,26 @@ List<RecommenderData> recommendClubs = [
       comments: [
         Comment(
             comment:
-            "Lot of mathematics involved in this course.",
-            name: "SCSE - JUSTIN ONG",
+            "The training sessions are very tiring.",
+            name: "BUS - JUSTIN ONG",
             commentCount: "3",
             likeCount: "2"),
         Comment(
-            comment: "Quite theory based lectures.",
-            name: "SCSE - CHEN LIM",
+            comment: "The training sessions are quite useful for beginners but not that helpful for pros",
+            name: "BIE - CHEN LIM",
             commentCount: "1",
             likeCount: "5"),
       ]),
   RecommenderData(4,
-      name: 'CZ2002 Software Engineering',
+      name: 'NTU Toastmasters',
       tags: [
-        Tags(id: 9, name: "Software"),
-        Tags(id: 10, name: "UML"),
-        Tags(id: 11, name: "Project")
+        Tags(id: 9, name: "Public Speaking"),
+        Tags(id: 10, name: "Confidence"),
+        Tags(id: 11, name: "Collaboration")
       ],
-      tagText: "Software, UML, Project",
-      offeredBy: "SCSE",
-      year: "2",
+      tagText: "Public Speaking, Confidence, Collaboration",
       details:
-      "This course teaches about the Software Engineering principles and techniques.",
+      "The club trains you ont public speaking techniques and approaches. It organizes collaborative debating and discussion sessions which helps in achieveing confidence for people who are shy.",
       rating1: "Difficulty",
       ratingValue1: 3,
       rating2: "Time",
@@ -269,12 +261,12 @@ List<RecommenderData> recommendClubs = [
       comments: [
         Comment(
             comment:
-            "Loved the course. It teached you how the corporate world works.",
+            "Extremely beneficial club for a shy person who wants to gain public speaking skills.",
             name: "SCSE - MUNDHRA DIVYESH",
             commentCount: "2",
             likeCount: "7"),
         Comment(
-            comment: "Theory based final exam and CA's",
+            comment: "This club requires a very high time commitment.",
             name: "SCSE - CHOW LIM",
             commentCount: "1",
             likeCount: "5"),

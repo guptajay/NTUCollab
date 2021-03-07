@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:ntucollab/models/recommend_data.dart';
-import 'package:ntucollab/screens/group_detail.dart';
+import 'package:ntucollab/screens/module_detail.dart';
 import 'package:ntucollab/screens/home.dart';
 import 'package:ntucollab/services/auth.dart';
 import 'package:ntucollab/widgets/app_bar.dart';

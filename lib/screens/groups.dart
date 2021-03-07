@@ -3,7 +3,7 @@ import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:ntucollab/widgets/app_bar.dart';
 import 'package:ntucollab/models/recommend_data.dart';
 import 'all_groups.dart';
-import 'group_detail.dart';
+import 'module_detail.dart';
 
 class Groups extends StatelessWidget {
   @override

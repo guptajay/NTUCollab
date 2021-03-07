@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:ntucollab/screens/group_detail.dart';
+import 'package:ntucollab/screens/module_detail.dart';
 import 'package:ntucollab/models/recommend_data.dart';
 
 class GroupCard {
