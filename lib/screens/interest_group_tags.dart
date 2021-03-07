@@ -74,6 +74,8 @@ class _InterestGroupTagsState extends State<InterestGroupTags> {
                           _selectedInterests = values;
                         },
                         chipDisplay: MultiSelectChipDisplay(
+                          chipColor: Colors.grey[200],
+                          textStyle: TextStyle(color: Colors.black),
                           onTap: (value) {
                             setState(() {
                               _selectedInterests.remove(value);

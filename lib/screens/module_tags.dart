@@ -19,10 +19,17 @@ class _ModuleTagsPageState extends State<ModuleTagsPage> {
     Tags(id: 6, name: "Accounting"),
     Tags(id: 7, name: "Data Science"),
   ];
-
+//  static List<Tags> _modulesSelected = [
+//    Tags(id: 1, name: "Mathematics"),
+//    Tags(id: 2, name: "Physics"),
+//    Tags(id: 3, name: "Machine Learning"),
+//  ];
   final _items = _modules
       .map((module) => MultiSelectItem<Tags>(module, module.name))
       .toList();
+//  final _items1 = _modules
+//      .map((module) => MultiSelectItem<Tags>(module, module.name))
+//      .toList();
   List<Tags> _selectedModules = [];
   @override
   void initState() {
@@ -32,7 +39,8 @@ class _ModuleTagsPageState extends State<ModuleTagsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppbarWidget.getAppBar("Select Tags", Colors.blue[400], Colors.white),
+      appBar:
+          AppbarWidget.getAppBar("Select Tags", Colors.blue[400], Colors.white),
       body: SingleChildScrollView(
         child: Container(
           alignment: Alignment.center,
@@ -72,13 +80,15 @@ class _ModuleTagsPageState extends State<ModuleTagsPage> {
                           _selectedModules = values;
                         },
                         chipDisplay: MultiSelectChipDisplay(
+                          chipColor: Colors.grey[200],
+                          textStyle: TextStyle(color: Colors.black),
                           onTap: (value) {
                             setState(() {
                               _selectedModules.remove(value);
                             });
                           },
                         ),
-                        onSelectionChanged: (values){
+                        onSelectionChanged: (values) {
                           print(values);
                         },
                       ),
@@ -103,7 +113,8 @@ class _ModuleTagsPageState extends State<ModuleTagsPage> {
                       MaterialPageRoute(builder: (context) => ClubTags()),
                     );
                   },
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(40)),
                   highlightElevation: 0,
                   borderSide: BorderSide(color: Colors.grey),
                   child: Padding(

@@ -73,6 +73,8 @@ class _ClubTagsState extends State<ClubTags> {
                           _selectedClubs = values;
                         },
                         chipDisplay: MultiSelectChipDisplay(
+                          chipColor: Colors.grey[200],
+                          textStyle: TextStyle(color: Colors.black),
                           onTap: (value) {
                             setState(() {
                               _selectedClubs.remove(value);
