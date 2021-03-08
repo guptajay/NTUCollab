@@ -45,8 +45,7 @@ class _ModuleTagsPageState extends State<ModuleTagsPage> {
         child: Container(
           alignment: Alignment.center,
           padding: EdgeInsets.all(20),
-          child: Flexible(
-            child: Column(
+          child: Column(
               children: <Widget>[
                 Text(
                   "Modules",
@@ -139,7 +138,6 @@ class _ModuleTagsPageState extends State<ModuleTagsPage> {
             ),
           ),
         ),
-      ),
     );
   }
 }

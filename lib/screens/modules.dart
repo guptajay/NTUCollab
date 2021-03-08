@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:ntucollab/models/recommend_data.dart';
+import 'package:ntucollab/screens/all_groups.dart';
+import 'package:ntucollab/screens/all_modules.dart';
 import 'package:ntucollab/screens/module_detail.dart';
-import 'package:ntucollab/screens/home.dart';
-import 'package:ntucollab/services/auth.dart';
 import 'package:ntucollab/widgets/app_bar.dart';
-import 'login_page.dart';
 
 class Modules extends StatelessWidget {
   @override
@@ -19,19 +18,13 @@ class Modules extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               mainAxisSize: MainAxisSize.max,
               children: <Widget>[
-                Stack(alignment: Alignment.center, children: <Widget>[
-                  Image(
-                    image: AssetImage("assets/images/modules.jpeg"),
-                    height: 200.0,
-                  ),
-                  Container(
-                      alignment: Alignment.center,
-                      child: const Text("Modules recommended for you",
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                          ))),
-                ]),
+                SizedBox(height: 15),
+                  const Text("Recommended Modules",
+                    textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 40,
+                        fontWeight: FontWeight.bold,
+                      )),
                 SizedBox(height: 15),
                 Container(
                   height: 270,
@@ -152,6 +145,38 @@ class Modules extends StatelessWidget {
                     },
                   ),
                 ),
+                SizedBox(height: 15,),
+                OutlineButton(
+                  splashColor: Colors.grey,
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => AllModulesPage()),
+                    );
+                  },
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
+                  highlightElevation: 0,
+                  borderSide: BorderSide(color: Colors.grey),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text(
+                          'All Modules',
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.blue[600],
+                          ),
+                        ),
+                        Icon(Icons.arrow_forward, color: Colors.blue[600])
+                      ],
+                    ),
+                  ),
+                ),
+                SizedBox(height: 5,),
+                buildInfoCard()
               ],
             ),
           ),
@@ -159,4 +184,44 @@ class Modules extends StatelessWidget {
       ),
     );
   }
+
+  Widget buildInfoCard() => Card(
+    margin: EdgeInsets.all(20),
+    clipBehavior: Clip.antiAlias,
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(24),
+    ),
+    child: Container(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [Colors.blue[400], Colors.blue[600]],
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+        ),
+      ),
+      padding: EdgeInsets.all(16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Information',
+            style: TextStyle(
+              fontSize: 15,
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          const SizedBox(height: 4),
+          Text(
+            'Due to COVID-19 precautionary measures, all lectures are to be held online.',
+            style: TextStyle(
+              fontSize: 15,
+              color: Colors.white,
+            ),
+          ),
+        ],
+      ),
+    ),
+  );
+
 }

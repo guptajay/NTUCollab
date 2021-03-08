@@ -11,6 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Login',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
           textTheme: Theme.of(context).textTheme.apply(
             fontFamily: 'Open Sans',

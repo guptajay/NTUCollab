@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
+import 'package:ntucollab/screens/all_clubs.dart';
+import 'package:ntucollab/screens/all_groups.dart';
 import 'package:ntucollab/widgets/app_bar.dart';
 import 'package:ntucollab/models/recommend_data.dart';
 import 'club_details.dart';
@@ -16,19 +18,13 @@ class Clubs extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               mainAxisSize: MainAxisSize.max,
               children: <Widget>[
-                Stack(alignment: Alignment.center, children: <Widget>[
-                  Image(
-                    image: AssetImage("assets/images/club.png"),
-                    height: 200.0,
-                  ),
-                  Container(
-                      alignment: Alignment.center,
-                      child: const Text("Clubs recommended for you",
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                          ))),
-                ]),
+                SizedBox(height: 15),
+                const Text("Recommended Clubs",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 40,
+                      fontWeight: FontWeight.bold,
+                    )),
                 SizedBox(height: 15),
                 Container(
                   height: 270,
@@ -147,6 +143,40 @@ class Clubs extends StatelessWidget {
                     },
                   ),
                 ),
+
+                SizedBox(height: 15,),
+                OutlineButton(
+                  splashColor: Colors.grey,
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => AllClubsPage()),
+                    );
+                  },
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
+                  highlightElevation: 0,
+                  borderSide: BorderSide(color: Colors.grey),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text(
+                          'All Clubs',
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.blue[600],
+                          ),
+                        ),
+                        Icon(Icons.arrow_forward, color: Colors.blue[600])
+                      ],
+                    ),
+                  ),
+                ),
+                SizedBox(height: 5,),
+                buildInfoCard()
+
               ],
             ),
           ),
@@ -154,4 +184,44 @@ class Clubs extends StatelessWidget {
       ),
     );
   }
+
+  Widget buildInfoCard() => Card(
+    margin: EdgeInsets.all(20),
+    clipBehavior: Clip.antiAlias,
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(24),
+    ),
+    child: Container(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [Colors.blue[400], Colors.blue[600]],
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+        ),
+      ),
+      padding: EdgeInsets.all(16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Information',
+            style: TextStyle(
+              fontSize: 15,
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          const SizedBox(height: 4),
+          Text(
+            'Due to COVID-19 precautionary measures, all activities with more than 50 students are to be held online.',
+            style: TextStyle(
+              fontSize: 15,
+              color: Colors.white,
+            ),
+          ),
+        ],
+      ),
+    ),
+  );
+
 }
