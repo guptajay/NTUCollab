@@ -54,7 +54,7 @@ Run the following steps to set up your environment:
 
 9. If you plan on using IntelliJ as your IDE, then also run `flutter ide-config --overwrite` to create all of the IntelliJ configuration files so you can open the main flutter directory as a project and run examples from within the IDE.
 
-To run an example, switch to that SSADPro's directory, and use `flutter run`. Make sure you have an emulator running, or a device connected over USB and debugging enabled on that device.
+To run the application, switch to NTUCollab's directory, and use `flutter run`. Make sure you have an emulator running, or a device connected over USB and debugging enabled on that device.
 
 * `cd NTUCollab`
 * `flutter run`
