@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
+import 'package:ntucollab/screens/create_group.dart';
 import 'package:ntucollab/widgets/app_bar.dart';
 import 'package:ntucollab/models/recommend_data.dart';
 import 'all_groups.dart';
@@ -17,19 +18,13 @@ class Groups extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               mainAxisSize: MainAxisSize.max,
               children: <Widget>[
-                Stack(alignment: Alignment.center, children: <Widget>[
-                  Image(
-                    image: AssetImage("assets/images/groups.jpeg"),
-                    height: 200.0,
-                  ),
-                  Container(
-                      alignment: Alignment.center,
-                      child: const Text("Interest Groups for you",
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                          ))),
-                ]),
+                SizedBox(height: 15),
+                const Text("Recommended Groups",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 40,
+                      fontWeight: FontWeight.bold,
+                    )),
                 SizedBox(height: 15),
                 Container(
                   height: 270,
@@ -150,7 +145,7 @@ class Groups extends StatelessWidget {
                     },
                   ),
                 ),
-                SizedBox(height: 50,),
+                SizedBox(height: 30,),
                 OutlineButton(
                   splashColor: Colors.grey,
                   onPressed: () {
@@ -170,6 +165,36 @@ class Groups extends StatelessWidget {
                       children: <Widget>[
                         Text(
                           'Navigate to my Groups',
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.blue[600],
+                          ),
+                        ),
+                        Icon(Icons.arrow_forward, color: Colors.blue[600])
+                      ],
+                    ),
+                  ),
+                ),
+                SizedBox(height: 20,),
+                OutlineButton(
+                  splashColor: Colors.grey,
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => NewGroupPage()),
+                    );
+                  },
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
+                  highlightElevation: 0,
+                  borderSide: BorderSide(color: Colors.grey),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text(
+                          'Create New Group',
                           style: TextStyle(
                             fontSize: 20,
                             color: Colors.blue[600],

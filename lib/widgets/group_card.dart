@@ -5,7 +5,7 @@ import 'package:ntucollab/models/recommend_data.dart';
 
 class GroupCard {
   static getGroupCard(
-      String name, String numberOfUsers, BuildContext context, int index) {
+      String name, String numberOfUsers, double titleSize, BuildContext context, int index, String btnText, String subtitle) {
     return Container(
         padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
         height: 130,
@@ -19,7 +19,7 @@ class GroupCard {
                 children: <Widget>[
                   Text(name,
                       style:
-                          TextStyle(fontSize: 40, fontWeight: FontWeight.bold,)),
+                          TextStyle(fontSize: titleSize, fontWeight: FontWeight.bold,)),
                   Padding(
                     padding: EdgeInsets.fromLTRB(5, 10, 5, 5),
                     child: RaisedButton(
@@ -28,7 +28,7 @@ class GroupCard {
                           side: BorderSide(
                               color: Color.fromRGBO(0, 160, 227, 1))),
                       child: Text(
-                        'Enter',
+                        btnText,
                         style: TextStyle(fontSize: 30),
                       ),
                       onPressed: () {
@@ -60,7 +60,7 @@ class GroupCard {
               SizedBox(height: 7),
               Row(children: <Widget>[
                 Text(
-                  "Number of Members: ",
+                  subtitle,
                   style: TextStyle(fontSize: 25),
                 ),
                 Text(

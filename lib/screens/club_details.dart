@@ -69,7 +69,7 @@ class _ClubDetailsPageState extends State<ClubDetailsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppbarWidget.getAppBar(
-            "Group Details", Colors.blue[400], Colors.white),
+            "Club Details", Colors.blue[400], Colors.white),
         body: SingleChildScrollView(
             child: Column(children: <Widget>[
               ClubDetailsCard.getClubDetailsCard(

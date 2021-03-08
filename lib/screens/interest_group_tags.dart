@@ -39,8 +39,7 @@ class _InterestGroupTagsState extends State<InterestGroupTags> {
         child: Container(
           alignment: Alignment.center,
           padding: EdgeInsets.all(20),
-          child: Flexible(
-            child: Column(
+          child: Column(
               children: <Widget>[
                 Text(
                   "Interests",
@@ -132,7 +131,6 @@ class _InterestGroupTagsState extends State<InterestGroupTags> {
             ),
           ),
         ),
-      ),
     );
   }
 }

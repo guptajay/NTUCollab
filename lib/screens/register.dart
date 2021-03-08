@@ -84,6 +84,10 @@ class _RegisterPageState extends State<RegisterPage> {
               OutlineButton(
                 splashColor: Colors.grey,
                 onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Home()),
+                  );
                 },
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
                 highlightElevation: 0,

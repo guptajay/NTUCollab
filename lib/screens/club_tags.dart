@@ -38,8 +38,7 @@ class _ClubTagsState extends State<ClubTags> {
         child: Container(
           alignment: Alignment.center,
           padding: EdgeInsets.all(20),
-          child: Flexible(
-            child: Column(
+          child: Column(
               children: <Widget>[
                 Text(
                   "Clubs",
@@ -131,7 +130,6 @@ class _ClubTagsState extends State<ClubTags> {
             ),
           ),
         ),
-      ),
     );
   }
 }
