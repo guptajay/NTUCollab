@@ -24,13 +24,13 @@ class _AllClubsPageState extends State<AllClubsPage> {
                 style:
                 TextStyle(fontSize: 40, fontWeight: FontWeight.bold)),
             SizedBox(height: 10,),
-            GroupCard.getGroupCard("CZ1011 Maths 1", "", 25, context,1, "More", "Algebra, Calculus"),
-            GroupCard.getGroupCard("CZ3004 MDP", "", 25,context,2, "More", "Android, Arduino, Raspberry Pi"),
-            GroupCard.getGroupCard("CZ3005 AI", "", 25,context,3, "More", "Calculus, Logical Inference"),
-            GroupCard.getGroupCard("ET0001 Innovation", "", 25,context,2, "More", "Entrepreneurship, Online"),
-            GroupCard.getGroupCard("CZ3004 MDP", "", 25,context,2, "More", "Android, Arduino, Raspberry Pi"),
-            GroupCard.getGroupCard("CZ3005 AI", "", 25,context,3, "More", "Calculus, Logical Inference"),
-            GroupCard.getGroupCard("ET0001 Innovation", "", 25,context,2, "More", "Entrepreneurship, Online"),
+            GroupCard.getGroupCard("Open Source Society", "", 25, context,0, "More", "Coding, Learning, Collaboration", "club"),
+            GroupCard.getGroupCard("NTU Red Cross", "", 25,context,1, "More", "Health, Wellbeing, Community", "club"),
+            GroupCard.getGroupCard("NTU Toastmasters", "", 25,context,3, "More", "Sports, Focus", "club"),
+            GroupCard.getGroupCard("NTU Archery Club", "", 25,context,2, "More", "Public Speaking, Confidence", "club"),
+            GroupCard.getGroupCard("NTU SCSE Club", "", 25,context,4, "More", "Management, Academics", "club"),
+            GroupCard.getGroupCard("NTU Earthlink", "", 25,context,3, "More", "Environment, Elections", "club"),
+            GroupCard.getGroupCard("Hall 8 JCRC", "", 25,context,2, "More", "NTU Halls, Dance, D&D", "club"),
           ]
           ),
         ));

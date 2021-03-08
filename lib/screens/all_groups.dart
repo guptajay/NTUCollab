@@ -24,11 +24,11 @@ class _AllGroupPageState extends State<AllGroupPage> {
             style:
             TextStyle(fontSize: 40, fontWeight: FontWeight.bold)),
         SizedBox(height: 10,),
-        GroupCard.getGroupCard("Debating", "7", 40, context,1, "Enter", "Number of Members: "),
-        GroupCard.getGroupCard("Hiking", "8",40, context,2, "Enter", "Number of Members: "),
-        GroupCard.getGroupCard("Trekking", "7",40, context,3, "Enter", "Number of Members: "),
-        GroupCard.getGroupCard("Cycling", "7", 40,context,2, "Enter", "Number of Members: "),
-        GroupCard.getGroupCard("Hackathons", "7",40, context,1, "Enter", "Number of Members: "),
+        GroupCard.getGroupCard("Debating", "7", 40, context,0, "Enter", "Number of Members: ", "group"),
+        GroupCard.getGroupCard("Hiking", "8",40, context,1, "Enter", "Number of Members: ", "group"),
+        GroupCard.getGroupCard("Trekking", "7",40, context,1, "Enter", "Number of Members: ", "group"),
+        GroupCard.getGroupCard("Cycling", "7", 40,context,0, "Enter", "Number of Members: ", "group"),
+        GroupCard.getGroupCard("Hackathons", "7",40, context,2, "Enter", "Number of Members: ", "group"),
       ]
       ),
     ));

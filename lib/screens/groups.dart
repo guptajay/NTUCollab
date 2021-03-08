@@ -4,6 +4,7 @@ import 'package:ntucollab/screens/create_group.dart';
 import 'package:ntucollab/widgets/app_bar.dart';
 import 'package:ntucollab/models/recommend_data.dart';
 import 'all_groups.dart';
+import 'club_details.dart';
 import 'module_detail.dart';
 
 class Groups extends StatelessWidget {
@@ -43,10 +44,8 @@ class Groups extends StatelessWidget {
                             Navigator.push(
                               context,
                               PageRouteBuilder(pageBuilder: (context, a, b) {
-                                return GroupDetailsPage(
+                                return ClubDetailsPage(
                                     name: recommendGroups[index].name,
-                                    offeredBy: recommendGroups[index].offeredBy,
-                                    year: recommendGroups[index].year,
                                     details: recommendGroups[index].details,
                                     modulesTagList: recommendGroups[index].tags,
                                     comments: recommendGroups[index].comments,
