@@ -1,28 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:ntucollab/screens/view_profile.dart';
 
 class AppbarWidget {
   static getAppBar(
+    BuildContext context,
     String title,
     Color border,
     Color bgColor,
   ) {
     return AppBar(
-        title: Text(title,
-            style: TextStyle(
-                color: border,
-                fontSize: 35)),
-
-//        leading: IconButton(
-//          icon: Image.asset('assets/logo.png'),
-//          onPressed: () {},
-//        ),
+        title: Text(title, style: TextStyle(color: border, fontSize: 35)),
         actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.supervised_user_circle, size: 40),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ViewProfilePage()),
+              );
+            },
+          ),
           IconButton(
             icon: Image.asset('assets/images/logo.png'),
             onPressed: () {
-              // do something
             },
-          )
+          ),
         ],
         backgroundColor: bgColor,
         brightness: Brightness.light,

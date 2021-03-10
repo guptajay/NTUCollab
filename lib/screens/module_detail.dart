@@ -73,7 +73,7 @@ class _GroupDetailsPageState extends State<GroupDetailsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppbarWidget.getAppBar(
-            "Module Details", Colors.blue[400], Colors.white),
+            context,"Module Details", Colors.blue[400], Colors.white),
         body: SingleChildScrollView(
             child: Column(children: <Widget>[
               ModuleDetailsCard.getModuleDetailsCard(

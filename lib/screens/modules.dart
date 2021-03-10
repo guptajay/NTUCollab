@@ -10,7 +10,7 @@ class Modules extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppbarWidget.getAppBar("Modules", Colors.blue[400], Colors.white),
+      appBar: AppbarWidget.getAppBar(context,"Modules", Colors.blue[400], Colors.white),
       body: SingleChildScrollView(
         child: Container(
           child: Center(
