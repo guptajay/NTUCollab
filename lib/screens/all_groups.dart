@@ -16,7 +16,7 @@ class _AllGroupPageState extends State<AllGroupPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppbarWidget.getAppBar("Interest Groups", Colors.blue[400], Colors.white),
+      appBar: AppbarWidget.getAppBar(context,"Interest Groups", Colors.blue[400], Colors.white),
       body: SingleChildScrollView(
       child: Column(children: <Widget>[
         SizedBox(height: 10,),

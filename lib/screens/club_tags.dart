@@ -33,7 +33,7 @@ class _ClubTagsState extends State<ClubTags> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppbarWidget.getAppBar("Select Tags", Colors.blue[400], Colors.white),
+      appBar: AppbarWidget.getAppBar(context,"Select Tags", Colors.blue[400], Colors.white),
       body: SingleChildScrollView(
         child: Container(
           alignment: Alignment.center,

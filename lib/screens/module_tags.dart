@@ -40,7 +40,7 @@ class _ModuleTagsPageState extends State<ModuleTagsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar:
-          AppbarWidget.getAppBar("Select Tags", Colors.blue[400], Colors.white),
+          AppbarWidget.getAppBar(context,"Select Tags", Colors.blue[400], Colors.white),
       body: SingleChildScrollView(
         child: Container(
           alignment: Alignment.center,

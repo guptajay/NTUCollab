@@ -10,7 +10,7 @@ class Clubs extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppbarWidget.getAppBar("Clubs", Colors.blue[400], Colors.white),
+      appBar: AppbarWidget.getAppBar(context,"Clubs", Colors.blue[400], Colors.white),
       body: SingleChildScrollView(
         child: Container(
           child: Center(
