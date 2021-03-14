@@ -129,7 +129,7 @@ class _ViewProfilePageState extends State<ViewProfilePage> {
                               _selectedModules = values;
                             },
                             chipDisplay: MultiSelectChipDisplay(
-                              chipColor: Colors.grey[400],
+                              chipColor: Colors.grey[200],
                               textStyle: TextStyle(color: Colors.black),
                               onTap: (value) {
                                 setState(() {
@@ -169,7 +169,7 @@ class _ViewProfilePageState extends State<ViewProfilePage> {
                               _selectedClubs = values;
                             },
                             chipDisplay: MultiSelectChipDisplay(
-                              chipColor: Colors.grey[400],
+                              chipColor: Colors.grey[200],
                               textStyle: TextStyle(color: Colors.black),
                               onTap: (value) {
                                 setState(() {
@@ -190,7 +190,7 @@ class _ViewProfilePageState extends State<ViewProfilePage> {
                     padding: const EdgeInsets.all(20.0),
                     child: Container(
                       decoration: BoxDecoration(
-                        color: Theme.of(context).primaryColor.withOpacity(.2),
+                        color: Colors.blue[200].withOpacity(.4),
                         border: Border.all(
                           color: Theme.of(context).primaryColor,
                           width: 2,
@@ -210,7 +210,7 @@ class _ViewProfilePageState extends State<ViewProfilePage> {
                               _selectedInterests = values;
                             },
                             chipDisplay: MultiSelectChipDisplay(
-                              chipColor: Colors.grey[400],
+                              chipColor: Colors.grey[200],
                               textStyle: TextStyle(color: Colors.black),
                               onTap: (value) {
                                 setState(() {

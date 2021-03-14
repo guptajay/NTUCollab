@@ -392,7 +392,7 @@ List<RecommenderData> recommendGroups = [
             likeCount: "5"),
       ]),
   RecommenderData(3,
-      name: 'Hackathons',
+      name: 'Hackathon',
       tags: [Tags(id: 7, name: "Coding"), Tags(id: 8, name: "Competitive"), Tags(id: 8, name: "Online")],
       tagText: "Coding, Competitve, Online",
       details:
