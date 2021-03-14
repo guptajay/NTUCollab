@@ -1,14 +1,31 @@
+import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:ntucollab/screens/all_clubs.dart';
-import 'package:ntucollab/screens/all_groups.dart';
 import 'package:ntucollab/widgets/app_bar.dart';
 import 'package:ntucollab/models/recommend_data.dart';
 import 'club_details.dart';
 
 class Clubs extends StatelessWidget {
+  int generateRandomNumber() {
+    var random = new Random();
+    var num = random.nextInt(3);
+    return num;
+  }
+
   @override
   Widget build(BuildContext context) {
+
+    List<RecommenderData> data;
+    int dataNum = generateRandomNumber();
+
+    if(dataNum == 0)
+      data = recommendClubs;
+    else if (dataNum == 1)
+      data = recommendClubs_two;
+    else
+      data = recommendClubs_three;
+
     return Scaffold(
       appBar: AppbarWidget.getAppBar(context,"Clubs", Colors.blue[400], Colors.white),
       body: SingleChildScrollView(
@@ -30,7 +47,7 @@ class Clubs extends StatelessWidget {
                   height: 270,
                   padding: const EdgeInsets.only(left: 32),
                   child: Swiper(
-                    itemCount: recommendClubs.length,
+                    itemCount: data.length,
                     itemWidth: MediaQuery.of(context).size.width - 2 * 64,
                     layout: SwiperLayout.STACK,
                     pagination: SwiperPagination(
@@ -44,19 +61,19 @@ class Clubs extends StatelessWidget {
                               context,
                               PageRouteBuilder(pageBuilder: (context, a, b) {
                                 return ClubDetailsPage(
-                                    name: recommendClubs[index].name,
-                                    details: recommendClubs[index].details,
-                                    modulesTagList: recommendClubs[index].tags,
-                                    comments: recommendClubs[index].comments,
-                                    rating1: recommendClubs[index].rating1,
+                                    name: data[index].name,
+                                    details: data[index].details,
+                                    modulesTagList: data[index].tags,
+                                    comments: data[index].comments,
+                                    rating1: data[index].rating1,
                                     ratingValue1:
-                                    recommendClubs[index].ratingValue1,
-                                    rating2: recommendClubs[index].rating2,
+                                    data[index].ratingValue1,
+                                    rating2: data[index].rating2,
                                     ratingValue2:
-                                    recommendClubs[index].ratingValue2,
-                                    rating3: recommendClubs[index].rating3,
+                                    data[index].ratingValue2,
+                                    rating3: data[index].rating3,
                                     ratingValue3:
-                                    recommendClubs[index].ratingValue3);
+                                    data[index].ratingValue3);
                               }),
                             );
                           },
@@ -78,7 +95,7 @@ class Clubs extends StatelessWidget {
                                         CrossAxisAlignment.start,
                                         children: <Widget>[
                                           Text(
-                                            recommendClubs[index].name,
+                                            data[index].name,
                                             style: TextStyle(
                                               fontSize: 24,
                                               color: const Color(0xff47455f),
@@ -87,7 +104,7 @@ class Clubs extends StatelessWidget {
                                             textAlign: TextAlign.left,
                                           ),
                                           Text(
-                                            recommendClubs[index].tagText,
+                                            data[index].tagText,
                                             style: TextStyle(
                                               fontSize: 15,
                                               color: Theme.of(context)
@@ -127,7 +144,7 @@ class Clubs extends StatelessWidget {
                                 right: 24,
                                 bottom: 60,
                                 child: Text(
-                                  recommendClubs[index].position.toString(),
+                                  data[index].position.toString(),
                                   style: TextStyle(
                                     fontSize: 200,
                                     color: Theme.of(context)

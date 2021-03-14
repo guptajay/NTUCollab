@@ -1,14 +1,32 @@
+import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:ntucollab/models/recommend_data.dart';
-import 'package:ntucollab/screens/all_groups.dart';
 import 'package:ntucollab/screens/all_modules.dart';
 import 'package:ntucollab/screens/module_detail.dart';
 import 'package:ntucollab/widgets/app_bar.dart';
 
 class Modules extends StatelessWidget {
+
+  int generateRandomNumber() {
+    var random = new Random();
+    var num = random.nextInt(3);
+    return num;
+  }
+
   @override
   Widget build(BuildContext context) {
+
+    List<RecommenderData> data;
+    int dataNum = generateRandomNumber();
+
+    if(dataNum == 0)
+      data = recommendModule;
+    else if (dataNum == 1)
+      data = recommendModule_two;
+    else
+      data = recommendModule_three;
+
     return Scaffold(
       appBar: AppbarWidget.getAppBar(context,"Modules", Colors.blue[400], Colors.white),
       body: SingleChildScrollView(
@@ -30,7 +48,7 @@ class Modules extends StatelessWidget {
                   height: 270,
                   padding: const EdgeInsets.only(left: 32),
                   child: Swiper(
-                    itemCount: recommendModule.length,
+                    itemCount: data.length,
                     itemWidth: MediaQuery.of(context).size.width - 2 * 64,
                     layout: SwiperLayout.STACK,
                     pagination: SwiperPagination(
@@ -44,21 +62,21 @@ class Modules extends StatelessWidget {
                               context,
                               PageRouteBuilder(pageBuilder: (context, a, b) {
                                 return GroupDetailsPage(
-                                    name: recommendModule[index].name,
-                                    offeredBy: recommendModule[index].offeredBy,
-                                    year: recommendModule[index].year,
-                                    details: recommendModule[index].details,
-                                    modulesTagList: recommendModule[index].tags,
-                                    comments: recommendModule[index].comments,
-                                    rating1: recommendModule[index].rating1,
+                                    name: data[index].name,
+                                    offeredBy: data[index].offeredBy,
+                                    year: data[index].year,
+                                    details: data[index].details,
+                                    modulesTagList: data[index].tags,
+                                    comments: data[index].comments,
+                                    rating1: data[index].rating1,
                                     ratingValue1:
-                                        recommendModule[index].ratingValue1,
-                                    rating2: recommendModule[index].rating2,
+                                        data[index].ratingValue1,
+                                    rating2: data[index].rating2,
                                     ratingValue2:
-                                        recommendModule[index].ratingValue2,
-                                    rating3: recommendModule[index].rating3,
+                                        data[index].ratingValue2,
+                                    rating3: data[index].rating3,
                                     ratingValue3:
-                                        recommendModule[index].ratingValue3);
+                                        data[index].ratingValue3);
                               }),
                             );
                           },
@@ -80,7 +98,7 @@ class Modules extends StatelessWidget {
                                             CrossAxisAlignment.start,
                                         children: <Widget>[
                                           Text(
-                                            recommendModule[index].name,
+                                            data[index].name,
                                             style: TextStyle(
                                               fontSize: 24,
                                               color: const Color(0xff47455f),
@@ -89,7 +107,7 @@ class Modules extends StatelessWidget {
                                             textAlign: TextAlign.left,
                                           ),
                                           Text(
-                                            recommendModule[index].tagText,
+                                            data[index].tagText,
                                             style: TextStyle(
                                               fontSize: 15,
                                               color: Theme.of(context)
@@ -129,7 +147,7 @@ class Modules extends StatelessWidget {
                                 right: 24,
                                 bottom: 60,
                                 child: Text(
-                                  recommendModule[index].position.toString(),
+                                  data[index].position.toString(),
                                   style: TextStyle(
                                     fontSize: 200,
                                     color: Theme.of(context)
