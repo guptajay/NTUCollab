@@ -28,7 +28,7 @@ class _AllGroupPageState extends State<AllGroupPage> {
         GroupCard.getGroupCard("Hiking", "8",40, context,1, "Enter", "Number of Members: ", "group"),
         GroupCard.getGroupCard("Trekking", "7",40, context,1, "Enter", "Number of Members: ", "group"),
         GroupCard.getGroupCard("Cycling", "7", 40,context,0, "Enter", "Number of Members: ", "group"),
-        GroupCard.getGroupCard("Hackathons", "7",40, context,2, "Enter", "Number of Members: ", "group"),
+        GroupCard.getGroupCard("Hackathon", "7",40, context,2, "Enter", "Number of Members: ", "group"),
       ]
       ),
     ));

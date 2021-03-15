@@ -7,6 +7,7 @@ import 'package:ntucollab/models/Tags.dart';
 import 'package:ntucollab/screens/home.dart';
 import 'package:ntucollab/widgets/rounded_input.dart';
 import 'package:ntucollab/widgets/rounded_password.dart';
+import 'package:ntucollab/widgets/text_field.dart';
 
 class NewGroupPage extends StatefulWidget {
   @override
@@ -35,9 +36,8 @@ class _NewGroupPageState extends State<NewGroupPage> {
     Tags(id: 5, name: "Anime"),
   ];
 
-  final _items = _names
-      .map((names) => MultiSelectItem<Tags>(names, names.name))
-      .toList();
+  final _items =
+      _names.map((names) => MultiSelectItem<Tags>(names, names.name)).toList();
 
   final _groupTagsItems = _groupTags
       .map((groupTags) => MultiSelectItem<Tags>(groupTags, groupTags.name))
@@ -77,19 +77,15 @@ class _NewGroupPageState extends State<NewGroupPage> {
                   SizedBox(
                     height: 50 * _scale,
                   ),
-                  Icon(
-                      Icons.group_add_sharp,
-                      color: Colors.blueGrey,
-                      size: 200
-                  ),
+                  Icon(Icons.group_add_sharp,
+                      color: Colors.blueGrey, size: 200),
                   SizedBox(
                     height: 10 * _scale,
                   ),
                   Text("NTUCollab",
                       style: TextStyle(
                           fontSize: 40.0 * _scale,
-                          fontWeight: FontWeight.bold
-                      )),
+                          fontWeight: FontWeight.bold)),
                   SizedBox(
                     height: 5,
                   ),
@@ -104,6 +100,11 @@ class _NewGroupPageState extends State<NewGroupPage> {
                     hintText: "Group Name",
                     onChanged: (value) {},
                   ),
+                  RoundedInputField(
+                    hintText: "Description",
+                    icon: Icons.info_outline,
+                    onChanged: (value) {},
+                  ),
                   Container(
                     margin: EdgeInsets.fromLTRB(30, 10, 30, 10),
                     decoration: BoxDecoration(
@@ -112,8 +113,7 @@ class _NewGroupPageState extends State<NewGroupPage> {
                           color: Theme.of(context).primaryColor,
                           width: 2,
                         ),
-                        borderRadius: BorderRadius.all(Radius.circular(30))
-                    ),
+                        borderRadius: BorderRadius.all(Radius.circular(30))),
                     child: Column(
                       children: <Widget>[
                         MultiSelectBottomSheetField(
@@ -136,18 +136,18 @@ class _NewGroupPageState extends State<NewGroupPage> {
                               });
                             },
                           ),
-                          onSelectionChanged: (values){
+                          onSelectionChanged: (values) {
                             print(values);
                           },
                         ),
                         _selectedTags == null || _selectedTags.isEmpty
                             ? Container(
-                            padding: EdgeInsets.all(10),
-                            alignment: Alignment.centerLeft,
-                            child: Text(
-                              "None selected",
-                              style: TextStyle(color: Colors.black54),
-                            ))
+                                padding: EdgeInsets.all(10),
+                                alignment: Alignment.centerLeft,
+                                child: Text(
+                                  "None selected",
+                                  style: TextStyle(color: Colors.black54),
+                                ))
                             : Container(),
                       ],
                     ),
@@ -155,13 +155,12 @@ class _NewGroupPageState extends State<NewGroupPage> {
                   Container(
                     margin: EdgeInsets.fromLTRB(30, 0, 30, 0),
                     decoration: BoxDecoration(
-                      color: Colors.blue[200].withOpacity(.4),
-                      border: Border.all(
-                        color: Theme.of(context).primaryColor,
-                        width: 2,
-                      ),
-                        borderRadius: BorderRadius.all(Radius.circular(30))
-                    ),
+                        color: Colors.blue[200].withOpacity(.4),
+                        border: Border.all(
+                          color: Theme.of(context).primaryColor,
+                          width: 2,
+                        ),
+                        borderRadius: BorderRadius.all(Radius.circular(30))),
                     child: Column(
                       children: <Widget>[
                         MultiSelectBottomSheetField(
@@ -184,18 +183,18 @@ class _NewGroupPageState extends State<NewGroupPage> {
                               });
                             },
                           ),
-                          onSelectionChanged: (values){
+                          onSelectionChanged: (values) {
                             print(values);
                           },
                         ),
                         _selectedClubs == null || _selectedClubs.isEmpty
                             ? Container(
-                            padding: EdgeInsets.all(10),
-                            alignment: Alignment.centerLeft,
-                            child: Text(
-                              "None selected",
-                              style: TextStyle(color: Colors.black54),
-                            ))
+                                padding: EdgeInsets.all(10),
+                                alignment: Alignment.centerLeft,
+                                child: Text(
+                                  "None selected",
+                                  style: TextStyle(color: Colors.black54),
+                                ))
                             : Container(),
                       ],
                     ),
@@ -206,13 +205,13 @@ class _NewGroupPageState extends State<NewGroupPage> {
                   OutlineButton(
                     splashColor: Colors.grey,
                     onPressed: () {
-
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Home()),
                       );
                     },
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(40)),
                     highlightElevation: 0,
                     borderSide: BorderSide(color: Colors.grey),
                     child: Padding(
