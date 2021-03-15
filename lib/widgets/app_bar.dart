@@ -20,10 +20,13 @@ class AppbarWidget {
               );
             },
           ),
-          IconButton(
-            icon: Image.asset('assets/images/logo.png'),
-            onPressed: () {
-            },
+          Padding(
+            padding: const EdgeInsets.fromLTRB(0,0,5,0),
+            child: IconButton(
+              icon: Image.asset('assets/images/logo.png'),
+              onPressed: () {
+              },
+            ),
           ),
         ],
         backgroundColor: bgColor,
