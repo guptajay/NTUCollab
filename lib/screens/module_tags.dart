@@ -69,7 +69,7 @@ class _ModuleTagsPageState extends State<ModuleTagsPage> {
                     children: <Widget>[
                       MultiSelectBottomSheetField(
                         initialChildSize: 0.4,
-                        initialValue: _modules,
+                        initialValue: _modules.sublist(1,4),
                         listType: MultiSelectListType.CHIP,
                         searchable: true,
                         buttonText: Text("Module Tags"),

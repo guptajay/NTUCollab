@@ -23,7 +23,8 @@ class _ClubTagsState extends State<ClubTags> {
   final _items = _clubs
       .map((clubs) => MultiSelectItem<Tags>(clubs, clubs.name))
       .toList();
-  List<Tags> _selectedClubs = [];
+  List<Tags> _selectedClubs = [
+  ];
 
   @override
   void initState() {
@@ -62,7 +63,7 @@ class _ClubTagsState extends State<ClubTags> {
                     children: <Widget>[
                       MultiSelectBottomSheetField(
                         initialChildSize: 0.4,
-                        initialValue: _clubs,
+                        initialValue: _clubs.sublist(1,4),
                         listType: MultiSelectListType.CHIP,
                         searchable: true,
                         buttonText: Text("Club Tags"),
@@ -80,9 +81,6 @@ class _ClubTagsState extends State<ClubTags> {
                             });
                           },
                         ),
-                        onSelectionChanged: (values){
-                          print(values);
-                        },
                       ),
                       _selectedClubs == null || _selectedClubs.isEmpty
                           ? Container(

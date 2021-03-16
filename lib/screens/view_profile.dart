@@ -119,7 +119,7 @@ class _ViewProfilePageState extends State<ViewProfilePage> {
                         children: <Widget>[
                           MultiSelectBottomSheetField(
                             initialChildSize: 0.4,
-                            initialValue: _modules,
+                            initialValue: _modules.sublist(1,4),
                             listType: MultiSelectListType.CHIP,
                             searchable: true,
                             buttonText: Text("Module Tags"),
@@ -159,7 +159,7 @@ class _ViewProfilePageState extends State<ViewProfilePage> {
                         children: <Widget>[
                           MultiSelectBottomSheetField(
                             initialChildSize: 0.4,
-                            initialValue: _clubs,
+                            initialValue: _clubs.sublist(1,4),
                             listType: MultiSelectListType.CHIP,
                             searchable: true,
                             buttonText: Text("Club Tags"),
@@ -200,7 +200,7 @@ class _ViewProfilePageState extends State<ViewProfilePage> {
                         children: <Widget>[
                           MultiSelectBottomSheetField(
                             initialChildSize: 0.4,
-                            initialValue: _interests,
+                            initialValue: _interests.sublist(1,4),
                             listType: MultiSelectListType.CHIP,
                             searchable: true,
                             buttonText: Text("Interest Tags"),
