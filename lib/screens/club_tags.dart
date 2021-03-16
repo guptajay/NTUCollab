@@ -12,13 +12,13 @@ class ClubTags extends StatefulWidget {
 class _ClubTagsState extends State<ClubTags> {
 
   static List<Tags> _clubs = [
-    Tags(id: 1, name: "Debating Society"),
+    Tags(id: 1, name: "Debating"),
     Tags(id: 2, name: "BlockChain"),
-    Tags(id: 3, name: "Open Source Society"),
-    Tags(id: 4, name: "Toastmaster"),
-    Tags(id: 5, name: "Red Cross"),
-    Tags(id: 6, name: "Friends of Children"),
-    Tags(id: 7, name: "SCSE Club"),
+    Tags(id: 3, name: "Coding"),
+    Tags(id: 4, name: "Collaboration"),
+    Tags(id: 5, name: "Donation"),
+    Tags(id: 6, name: "Community Service"),
+    Tags(id: 7, name: "Planning"),
   ];
   final _items = _clubs
       .map((clubs) => MultiSelectItem<Tags>(clubs, clubs.name))
