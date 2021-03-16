@@ -13,17 +13,31 @@ class _ViewProfilePageState extends State<ViewProfilePage> {
   double _prevScale;
   double _scale;
   static List<Tags> _clubs = [
-    Tags(id: 1, name: "Debating Society"),
+    Tags(id: 1, name: "Debating"),
     Tags(id: 2, name: "BlockChain"),
+    Tags(id: 3, name: "Coding"),
+    Tags(id: 4, name: "Collaboration"),
+    Tags(id: 5, name: "Donation"),
+    Tags(id: 6, name: "Community Service"),
+    Tags(id: 7, name: "Planning"),
   ];
   static List<Tags> _modules = [
     Tags(id: 1, name: "Mathematics"),
     Tags(id: 2, name: "Physics"),
+    Tags(id: 3, name: "Machine Learning"),
+    Tags(id: 4, name: "Software Engineering"),
+    Tags(id: 5, name: "Astronomy"),
+    Tags(id: 6, name: "Accounting"),
+    Tags(id: 7, name: "Data Science"),
   ];
   static List<Tags> _interests = [
     Tags(id: 1, name: "Running"),
     Tags(id: 2, name: "Tennis"),
     Tags(id: 3, name: "Hackathons"),
+    Tags(id: 4, name: "Google Workshops"),
+    Tags(id: 5, name: "Badminton"),
+    Tags(id: 6, name: "Trekking"),
+    Tags(id: 7, name: "Debating"),
   ];
   static List _items;
   List<Tags> _selectedClubs = [];
