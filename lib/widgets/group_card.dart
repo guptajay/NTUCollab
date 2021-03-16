@@ -35,7 +35,7 @@ class GroupCard {
                                 color: Color.fromRGBO(0, 160, 227, 1))),
                         child: Text(
                           btnText,
-                          style: TextStyle(fontSize: 30),
+                          style: TextStyle(fontSize: 25),
                         ),
                         onPressed: () {
                           if(type == "module") {
@@ -116,11 +116,11 @@ class GroupCard {
                 child: Row(children: <Widget>[
                   Text(
                     subtitle,
-                    style: TextStyle(fontSize: 25),
+                    style: TextStyle(fontSize: 17),
                   ),
                   Text(
                     numberOfUsers,
-                    style: TextStyle(fontSize: 25),
+                    style: TextStyle(fontSize: 17),
                   )
                 ]),
               )
