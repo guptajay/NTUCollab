@@ -24,13 +24,11 @@ class _AllModulesPageState extends State<AllModulesPage> {
                 style:
                 TextStyle(fontSize: 40, fontWeight: FontWeight.bold)),
             SizedBox(height: 10,),
-            GroupCard.getGroupCard("CZ4011 ML", "", 25, context, 0, "More", "Applied Maths, Project", "module"),
-            GroupCard.getGroupCard("CZ3006 Networking", "", 25,context, 2, "More", "Network, Algebra", "module"),
-            GroupCard.getGroupCard("CZ3005 AI", "", 25,context, 1, "More", "Calculus, Logical Inference", "module"),
-            GroupCard.getGroupCard("ET0001 Innovation", "", 25,context, 4, "More", "Entrepreneurship, Innovation", "module"),
-            GroupCard.getGroupCard("CZ2002 Software Eng.", "", 25,context, 3, "More", "Android, Arduino, Raspberry Pi", "module"),
-            GroupCard.getGroupCard("CZ3005 AI", "", 25,context, 1, "More", "Calculus, Logical Inference", "module"),
-            GroupCard.getGroupCard("ET0001 Innovation", "", 25,context, 4, "More", "Entrepreneurship, Innovation", "module"),
+            GroupCard.getGroupCard("CZ4011 ML", "", 21, context, 0, "More", "Applied Maths, Project", "module"),
+            GroupCard.getGroupCard("CZ3006 Networking", "", 21,context, 2, "More", "Network, Algebra", "module"),
+            GroupCard.getGroupCard("CZ3005 AI", "", 21,context, 1, "More", "Calculus, Logical Inference", "module"),
+            GroupCard.getGroupCard("ET0001 Innovation", "", 21,context, 4, "More", "Entrepreneurship, Innovation", "module"),
+            GroupCard.getGroupCard("CZ2002 Software Eng.", "", 21,context, 3, "More", "Android, Arduino, Raspberry Pi", "module"),
           ]
           ),
         ));

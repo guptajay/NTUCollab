@@ -63,7 +63,7 @@ class _InterestGroupTagsState extends State<InterestGroupTags> {
                     children: <Widget>[
                       MultiSelectBottomSheetField(
                         initialChildSize: 0.4,
-                        initialValue: _interests,
+                        initialValue: _interests.sublist(1,4),
                         listType: MultiSelectListType.CHIP,
                         searchable: true,
                         buttonText: Text("Interest Tags"),
