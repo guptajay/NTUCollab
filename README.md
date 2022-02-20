@@ -64,10 +64,10 @@ To run the application, switch to NTUCollab's directory, and use `flutter run`. 
 
 ## Authors
 
-* Gupta Jay
-* Mundhra Divyesh
-* Kanodia Ritwik
-* Bhatia Ritik
-* Bansal Aditya
-* Somani Palak
-* Dandapath Soham
+* [Gupta Jay](https://github.com/guptajay)
+* [Mundhra Divyesh](https://github.com/divyeshmundhra)
+* [Kanodia Ritwik](https://github.com/ritwikkanodia)
+* [Bhatia Ritik](https://github.com/ritikbhatia)
+* [Bansal Aditya](https://github.com/bansal-aditya)
+* [Somani Palak](https://github.com/palakasomani)
+* [Dandapath Soham](https://github.com/12dash)
